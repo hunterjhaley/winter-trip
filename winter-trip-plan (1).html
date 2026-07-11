@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christmas to New Year 2026: The Family Winter Trip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Public+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F2E9; --card:#FFFDF7; --ink:#16243A; --ink2:#4A5568;
+  --navy:#16243A; --ice:#7FB6C9; --ice-d:#3E7D93; --gold:#C9A227; --gold-d:#A5831B;
+  --pine:#2F5E4E; --red:#B3402A; --line:#E4DCC8;
+}
+*{box-sizing:border-box; margin:0; padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Public Sans',system-ui,sans-serif; background:var(--paper); color:var(--ink); line-height:1.55; font-size:16px}
+.wrap{max-width:860px; margin:0 auto; padding:0 16px 40px}
+.slab{font-family:'Alfa Slab One',serif; font-weight:400; letter-spacing:.01em}
+
+/* HERO */
+.hero{background:var(--navy); color:#FFFDF7; padding:38px 18px 30px; text-align:center; border-bottom:6px solid var(--gold)}
+.hero .kicker{font-size:12.5px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:var(--ice)}
+.hero h1{font-family:'Alfa Slab One',serif; font-size:clamp(30px,7vw,52px); line-height:1.06; margin:10px 0 8px; color:#FFFDF7}
+.hero h1 b{color:var(--gold)}
+.hero .sub{font-size:15.5px; color:#D7E3EA; max-width:600px; margin:0 auto}
+.pills{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:16px}
+.pill{background:rgba(255,255,255,.08); border:1.5px solid rgba(255,255,255,.25); color:#FFFDF7; border-radius:999px; padding:6px 13px; font-size:13px; font-weight:600}
+.pill b{color:var(--gold)}
+
+/* TABS */
+.tabbar{position:sticky; top:0; z-index:50; background:var(--paper); border-bottom:2px solid var(--line); padding:10px 8px}
+.tabs{display:flex; gap:8px; max-width:860px; margin:0 auto; overflow-x:auto}
+.tab{flex:1 0 auto; min-width:130px; border:2px solid var(--navy); background:var(--card); color:var(--navy); border-radius:12px; padding:9px 12px; font:inherit; font-weight:800; font-size:13.5px; cursor:pointer; text-align:left}
+.tab .ico{display:block; font-size:17px}
+.tab .step{display:block; font-size:10.5px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--ice-d)}
+.tab.active{background:var(--navy); color:#FFFDF7}
+.tab.active .step{color:var(--gold)}
+html.js .panel{display:none}
+html.js .panel.active{display:block}
+.panel{padding-top:8px}
+
+/* SECTIONS */
+.sec{margin:30px 0 12px}
+.eyebrow{font-size:12px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:var(--ice-d)}
+.sec h2{font-size:clamp(22px,4.6vw,30px); margin-top:4px}
+.lead{color:var(--ink2); font-size:15.5px; margin-top:6px; max-width:640px}
+
+/* CARDS */
+.card{background:var(--card); border:2px solid var(--navy); border-radius:16px; overflow:hidden; margin:14px 0; box-shadow:4px 4px 0 rgba(22,36,58,.14)}
+.card-body{padding:16px 16px 14px}
+.card h3{font-size:clamp(19px,4vw,24px); margin-bottom:2px}
+.where{font-size:13px; font-weight:700; color:var(--ice-d); text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px}
+.chips{display:flex; flex-wrap:wrap; gap:7px; margin:8px 0}
+.chip{font-size:12.5px; font-weight:700; border:1.5px solid var(--navy); border-radius:999px; padding:4px 11px; background:#FFF}
+.chip.star{background:var(--gold); border-color:var(--gold-d); color:var(--navy)}
+.chip.ok{background:#E8F2E5; border-color:var(--pine); color:var(--pine)}
+.chip.warn{background:#F9E8E2; border-color:var(--red); color:var(--red)}
+.chip.ice{background:#E7F2F6; border-color:var(--ice-d); color:var(--ice-d)}
+.ribbon{display:inline-block; font-size:11.5px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; padding:4px 11px; border-radius:6px; margin-bottom:8px}
+.ribbon.top{background:var(--gold); color:var(--navy)}
+.ribbon.maple{background:var(--red); color:#FFFDF7}
+.ribbon.pick{background:var(--ice-d); color:#FFFDF7}
+.card p{font-size:15px; margin:6px 0}
+
+/* RANK BADGE ROW */
+.rankrow{display:flex; align-items:center; gap:12px; padding:14px 16px 0}
+.rank{flex:0 0 auto; width:52px; height:52px; border-radius:50%; background:var(--navy); color:var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Alfa Slab One',serif; font-size:24px; border:3px solid var(--gold)}
+.rank.gray{background:#8A93A3; border-color:#C6CCD6; color:#FFF}
+.rankmeta{font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--ice-d)}
+
+/* LISTS */
+.todo{list-style:none}
+.todo li{padding:9px 0; border-bottom:1.5px dashed var(--line); font-size:14.5px}
+.todo li:last-child{border-bottom:none}
+.todo b{display:block; font-size:14.5px}
+.todo span{color:var(--ink2); display:block; margin:2px 0 4px}
+.todo a{color:var(--ice-d); font-weight:700; text-decoration:none; border-bottom:2px solid var(--ice); font-size:13.5px}
+.rank-tag{display:inline-block; background:var(--navy); color:#FFFDF7; font-size:10.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; border-radius:5px; padding:2px 7px; margin-right:7px; vertical-align:2px}
+.rank-tag.alt{background:var(--ice-d)}
+
+/* PERSON GRID */
+.people{list-style:none}
+.people li{display:flex; gap:10px; padding:8px 0; border-bottom:1.5px dashed var(--line); font-size:14px}
+.people li:last-child{border-bottom:none}
+.people .who{flex:0 0 108px; font-weight:800; color:var(--navy); font-size:13px}
+.people .what{color:var(--ink2)}
+
+/* DETAILS */
+details{border:1.5px solid var(--line); border-radius:12px; margin:10px 0; background:#FBF8EF}
+summary{cursor:pointer; padding:11px 14px; font-weight:800; font-size:14.5px; list-style:none; display:flex; align-items:center; gap:8px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+"; margin-left:auto; font-family:'Alfa Slab One',serif; color:var(--ice-d)}
+details[open] summary::after{content:"-"}
+.inner{padding:2px 14px 12px}
+
+/* STRIPS */
+.mom{font-size:13.5px; font-weight:600; background:#FDF3E3; border:1.5px dashed var(--gold-d); border-radius:10px; padding:9px 12px; margin:10px 0}
+.mom b{color:var(--gold-d); font-weight:800}
+.catch{font-size:13.5px; font-weight:600; background:#F9E8E2; border:1.5px dashed var(--red); border-radius:10px; padding:9px 12px; margin:10px 0}
+.catch b{color:var(--red); font-weight:800}
+.note{font-size:13.5px; font-weight:600; background:#E7F2F6; border:1.5px dashed var(--ice-d); border-radius:10px; padding:9px 12px; margin:10px 0}
+.note b{color:var(--ice-d)}
+
+/* ACTIONS */
+.actions{display:flex; flex-wrap:wrap; gap:9px; margin-top:12px}
+.btn{display:inline-block; font-weight:800; font-size:13.5px; text-decoration:none; border-radius:10px; padding:9px 14px; border:2px solid var(--navy)}
+.btn.solid{background:var(--navy); color:#FFFDF7}
+.btn.ghost{background:transparent; color:var(--navy)}
+.btn.gold{background:var(--gold); border-color:var(--gold-d); color:var(--navy)}
+
+/* ELEVATION CHART */
+.bars{margin:12px 0}
+.bar{margin:9px 0}
+.bar .lbl{display:flex; justify-content:space-between; font-size:13px; font-weight:700}
+.bar .lbl small{color:var(--ink2); font-weight:600}
+.bar .track{height:14px; background:#ECE6D4; border-radius:999px; margin-top:4px; position:relative; overflow:visible}
+.bar .fill{height:100%; border-radius:999px; background:var(--ice-d)}
+.bar.warn .fill{background:var(--red)}
+.granby{border-top:3px dashed var(--red); margin:16px 0 4px; position:relative}
+.granby span{position:absolute; right:0; top:-24px; font-size:12px; font-weight:800; color:var(--red)}
+
+.foot{background:var(--navy); color:#D7E3EA; text-align:center; padding:26px 16px; font-size:13.5px; margin-top:40px; border-top:6px solid var(--gold)}
+.foot .slab{color:var(--gold); display:block; font-size:19px; margin-bottom:6px}
+.track{display:flex; gap:10px; flex-wrap:wrap; margin:10px 0}
+.lane{flex:1 1 240px; border:1.5px solid var(--line); border-radius:12px; padding:10px 12px; background:#FBF8EF}
+.lane h4{font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin-bottom:4px}
+.lane.ski h4{color:var(--ice-d)} .lane.city h4{color:var(--gold-d)} .lane.all{background:#E8F2E5; border-color:var(--pine)} .lane.all h4{color:var(--pine)}
+.lane p{font-size:13.5px; color:var(--ink2); margin:0}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<div class="hero">
+  <div class="kicker">Family Trip Planning &bull; Christmas to New Year</div>
+  <h1>Quebec City: <b>The Trip</b></h1>
+  <p class="sub">Decided: eight nights inside the walled city, December 26 to January 3. Ski mornings for the crews that ski, slow mornings for the crew that does not, and everybody back together every afternoon. This page is the whole plan.</p>
+  <div class="pills">
+    <span class="pill"><b>Dec 26 to Jan 3</b> &bull; 8 nights</span>
+    <span class="pill">NYE <b>inside the walls</b></span>
+    <span class="pill"><b>9</b> travelers, ages 4 to 66</span>
+    <span class="pill">~<b>$25K</b> of a $30K ceiling</span>
+  </div>
+</div>
+
+<div class="tabbar"><div class="tabs">
+  <button type="button" class="tab active" data-target="p-plan"><span class="ico">&#129517;</span><span class="step">Start here</span>How The Week Works</button>
+  <button type="button" class="tab" data-target="p-days"><span class="ico">&#128198;</span><span class="step">Dec 26 to Jan 3</span>Day by Day</button>
+  <button type="button" class="tab" data-target="p-stay"><span class="ico">&#127961;&#65039;</span><span class="step">Home base + tables</span>Stay &amp; Eat</button>
+  <button type="button" class="tab" data-target="p-money"><span class="ico">&#128176;</span><span class="step">All in</span>The Money</button>
+</div></div>
+
+<div class="wrap">
+
+<!-- ================= PANEL 1: HOW THE WEEK WORKS ================= -->
+<section id="p-plan" class="panel active">
+
+  <div class="sec">
+    <span class="eyebrow">The system</span>
+    <h2 class="slab">Two tracks in the morning, one family by afternoon</h2>
+    <p class="lead">Nine people, three speeds: the ski crew (the 4 and 6 year old's family, out 2 to 3 mornings), the city crew (the 12 and 18 year old's family, skiing once), and Grandma, who runs best after noon. The whole week runs on one rhythm so nobody waits on anybody and nobody misses anything that matters.</p>
+  </div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">The daily rhythm</h3>
+    <div class="track">
+      <div class="lane ski"><h4>&#9975;&#65039; Ski mornings</h4><p>Out the door by 7:45, on the mountain for first lifts, ski hard 4 hours, rolling home by 1:00. Skiing is knocked out before the city even finishes coffee.</p></div>
+      <div class="lane city"><h4>&#9749; Slow mornings</h4><p>No alarms. Loft breakfast, the market square outside the door, a wander window from about 10 to 12:30. Windows, not schedules; see something, chase it.</p></div>
+      <div class="lane all"><h4>&#129309; Together from 1:30</h4><p>Everyone converges back at the lofts around 1:30, Grandma fresh and ready (her day starts after 12), and the afternoon and evening are one family: falls, toboggans, skating, dinners, fireworks.</p></div>
+    </div>
+    <div class="mom"><b>&#10084;&#65039; The Grandma rule, baked in:</b> nothing she's part of starts before noon. Mornings are hers: slow coffee, the square from the window. Every afternoon anchor below (carriage, falls, tea, skating benches, dinners, fireworks) is built flat, warm-up-friendly, and after 12.</div>
+    <div class="note"><b>Meetup default:</b> when in doubt, everyone's back at the lofts at 1:30. One address, one time, all week. Change it by group text, not by plan.</div>
+  </div></div>
+
+  <div class="sec"><span class="eyebrow">Getting there and around</span><h2 class="slab">Flights, vans, and the ski shuttle question</h2></div>
+
+  <div class="card"><div class="card-body">
+    <ul class="todo">
+      <li><b>&#9992;&#65039; Fly Houston to Quebec City, one stop</b><span>IAH to YQB with one connection (Montreal, Toronto, or a US hub), roughly 7 to 9 hours door to door. Book the morning departure so we land with daylight left. The alternative, nonstop to Montreal plus a 3 hour drive, only wins if fares gap by $150+ a seat; with 9 people and luggage, the extra flight leg beats the extra drive.</span></li>
+      <li><b>&#128663; Two minivans for the week, and here's why</b><span>Rideshare covers the old city fine, but we leave it five times: airport twice, the mountain 2 to 3 times, Valcartier, and the falls. Two minivans at the airport solve all of it, and Quebec law requires winter tires on rentals December through March, so they come properly shod. Park in the underground garage below our square and forget them on city days.</span></li>
+      <li><b>&#127961;&#65039; The old city itself needs zero driving</b><span>Once parked, everything inside the walls is a walk: the toboggan, the funicular, Petit Champlain, skating, the market, every restaurant on our list. The vans are for mountains, not streets.</span></li>
+    </ul>
+  </div></div>
+
+  <div class="sec"><span class="eyebrow">The ski operation</span><h2 class="slab">Mont-Sainte-Anne, done right</h2></div>
+
+  <div class="card"><div class="card-body">
+    <div class="chips"><span class="chip star">&#9733; 4.5 (3,799)</span><span class="chip ice">30 min east on Route 138</span><span class="chip ok">2,050 ft vertical, 71 trails</span><span class="chip ok">Base ~575 ft, zero altitude issue</span></div>
+    <p>Our mountain all week: a real 2,050-foot-vertical mountain with a base-to-summit gondola, a strong ski school, and on-mountain daycare right by the gondola. Big enough that the adults never get bored, close enough that a half-day is genuinely a half-day.</p>
+    <ul class="todo">
+      <li><b>Book before we fly (the one hard rule)</b><span>Christmas-week ski school for the 4 and 6 year old, plus reserved rental gear for everyone skiing, gets booked online the same week we book flights. Holiday lessons sell out; walk-ups get scraps.</span></li>
+      <li><b>First ski morning runs 45 minutes heavier</b><span>Boot fitting and rental pickup for the crew takes real time once. Leave the lofts at 7:30 that first day; every ski morning after, gear's dialed and it's 7:45 out, skiing by 9 (8:30 on weekends), done by 12:30.</span></li>
+      <li><b>How a joint ski day works</b><span>On the one morning both families ski: littles into ski school at 9, the 12 and 18 year old ride with the adults, everyone converges for a summit-lodge hot chocolate at 11:30, last runs, home by 1:30. Grandma's option that morning: ride out with us and take the gondola to the summit lodge in street shoes, watch the St. Lawrence with a coffee, or keep her slow city morning. Her call, standing offer.</span></li>
+      <li><b>Montmorency Falls is on the way home</b><span>The frozen waterfall taller than Niagara sits right on Route 138 between the mountain and the city. We stack it onto a ski-day afternoon so the drive earns double.</span></li>
+    </ul>
+    <div class="actions">
+      <a class="btn solid" href="https://www.google.com/search?tbm=isch&amp;q=Mont-Sainte-Anne+winter+gondola+ski" target="_blank" rel="noopener">&#128247; Photos</a>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Mont-Sainte-Anne+Beaupre+QC" target="_blank" rel="noopener">&#128506;&#65039; Map</a>
+    </div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">One honest flag: the ice hotel calendar</h3>
+    <p>The H&ocirc;tel de Glace is rebuilt from scratch every winter and typically opens in the first days of January. Some years that lands inside our window (the Jan 2 weekend), some years it's days after we fly home; the grounds and ice bar sometimes preview earlier. So it's penciled as a Saturday Jan 2 possibility, confirmed when dates publish in the fall, and the Valcartier tubing mountain next door runs all week either way. If the hotel opens while we're there, we're walking through it. If not, the tubing day alone is worth the drive.</p>
+    <div class="actions">
+      <a class="btn solid" href="https://www.google.com/search?tbm=isch&amp;q=Hotel+de+Glace+Quebec+ice+hotel+rooms" target="_blank" rel="noopener">&#128247; Photos</a>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+de+Glace+Valcartier" target="_blank" rel="noopener">&#128506;&#65039; Map</a>
+    </div>
+  </div></div>
+
+</section>
+
+<!-- ================= PANEL 2: DAY BY DAY ================= -->
+<section id="p-days" class="panel">
+
+  <div class="sec">
+    <span class="eyebrow">Dec 26 to Jan 3 &bull; windows, not schedules</span>
+    <h2 class="slab">Day by Day</h2>
+    <p class="lead">Times below are meeting anchors and loose windows. Inside a window, wander: that's the point of basing inside the walls. The only fixed things all week are lift tickets, dinner reservations, and midnight on the 31st.</p>
+  </div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Sat Dec 26 &bull; Travel day</h3>
+    <p>Christmas was yesterday at home, like always. Morning flight IAH to Quebec City, land mid-afternoon, grab the two vans, 25 minutes to the lofts. First walk under the lights before dinner because nobody will be able to wait. Easy dinner two doors down at La Buchette, early night.</p>
+    <div class="track">
+      <div class="lane all"><h4>&#129309; Everyone</h4><p>Land, settle, one lap of the square, casual dinner, sleep. Grandma's only job: pick her window seat in the loft.</p></div>
+    </div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Sun Dec 27 &bull; The old city, together</h3>
+    <p>No skis, no vans, no splitting up. This is the day the city sells itself.</p>
+    <div class="track">
+      <div class="lane city"><h4>&#9749; Morning window, 9:30 to 12</h4><p>Big breakfast at La B&ucirc;che (the maple sugar-shack feast), then wander: funicular down to Petit Champlain, Place Royale, the shops still dressed for Christmas.</p></div>
+      <div class="lane all"><h4>&#129309; From noon</h4><p>Grandma joins for lunch. Afternoon: first runs on the 1884 toboggan by the Ch&acirc;teau (littles ride with a parent), hot chocolate, and a dusk carriage ride through the walls for Grandma with whoever calls shotgun. Dinner at Le Lapin Saut&eacute;, booked ahead, fireplace on.</p></div>
+    </div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Mon Dec 28 &bull; Ski Day 1 (ski crew) + museum morning (city crew)</h3>
+    <div class="track">
+      <div class="lane ski"><h4>&#9975;&#65039; Ski crew, 7:30 to 1:30</h4><p>Heavy morning: out at 7:30 for rental fitting, littles into ski school at 9, parents ski the real mountain, done 12:30, home by 1:30. Hardest wake-up of the week, and it buys two more easy ones.</p></div>
+      <div class="lane city"><h4>&#9749; City crew window, 10 to 12:30</h4><p>Slow start, then the Mus&eacute;e de la civilisation (the teens' pick) or Saint-Jean street shopping. Grandma: coffee, the square, zero agenda.</p></div>
+      <div class="lane all"><h4>&#129309; From 1:30</h4><p>Regroup at the lofts, then skating at Place D'Youville right outside the walls: skaters skate, benchers hold hot chocolate, Grandma judges form. Casual dinner at Savini on our street.</p></div>
+    </div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Tue Dec 29 &bull; Tubing mountain day</h3>
+    <div class="track">
+      <div class="lane ski"><h4>&#128739;&#65039; Both families, 10 to 2:30</h4><p>Valcartier Winter Playground, 25 minutes out: 35+ tubing lanes and a lift tows the tube uphill, so the 4 year old and the 18 year old ride the same mountain all day. Lunch on site.</p></div>
+      <div class="lane city"><h4>&#9749; Grandma's morning</h4><p>Her slowest day: the lofts, the market square, maybe the Ch&acirc;teau lobby with a book. Option: ride out at noon to watch the last tubing hour and join lunch.</p></div>
+      <div class="lane all"><h4>&#129309; From 3:30</h4><p>Home, thaw, then the big cook-in: one pot of something Qu&eacute;b&eacute;cois in the loft kitchen, laundry running, kids in pajamas by 8. Every trip needs this night.</p></div>
+    </div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Wed Dec 30 &bull; Ski Day 2, the joint one + falls afternoon</h3>
+    <div class="track">
+      <div class="lane ski"><h4>&#9975;&#65039; Everyone who skis, 7:45 to 1:30</h4><p>The all-ski morning: littles in school, the 12 and 18 year old riding with all four parents, summit-lodge hot chocolate summit at 11:30, last runs, home 1:30. Gear's already fitted, so it's a clean 7:45 out.</p></div>
+      <div class="lane city"><h4>&#9749; Grandma's morning</h4><p>Slow start, then her standing offer: gondola to the summit lodge in street shoes to meet the hot-chocolate summit at 11:30, or stay city-side and meet us at 2.</p></div>
+      <div class="lane all"><h4>&#129309; From 2</h4><p>Montmorency Falls on the drive home: cable car up, the frozen sugarloaf cone, family photo, one hour. Evening split on purpose: the four parents take the splurge table at Chez Rioux &amp; Pettigrew at 7:30 while the 18 year old runs pizza-and-movie night at the lofts for real babysitting money.</p></div>
+    </div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Thu Dec 31 &bull; New Year's Eve</h3>
+    <div class="track">
+      <div class="lane city"><h4>&#9749; All morning: nothing</h4><p>Sleep in. Late waffles. The only scheduled item before noon is nobody scheduling anything.</p></div>
+      <div class="lane all"><h4>&#129309; From noon</h4><p>Last toboggan runs and Petit Champlain souvenirs in the afternoon, early family dinner at 5:30, littles nap 7 to 9:30 if they'll take it. Then the walled city turns into one outdoor party: music, lights, fireworks at midnight. We walk out the door, stand in it together, and walk home. Grandma's choice: the square at midnight or the show from the loft window with the kettle on. Both count.</p></div>
+    </div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Fri Jan 1 &bull; The soft day</h3>
+    <div class="track">
+      <div class="lane city"><h4>&#9749; Recovery morning</h4><p>City sleeps, we sleep. Brunch at Cochon Dingue around 11 when it opens up.</p></div>
+      <div class="lane all"><h4>&#129309; Afternoon, unhurried</h4><p>The unplanned afternoon on purpose: the thing everyone's been asking to go back to, they get to go back to. Skating, one more chute run, a caf&eacute; crawl, naps. Easy dinner, early night; two crews have a morning tomorrow.</p></div>
+    </div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Sat Jan 2 &bull; Ski Day 3 (optional) + the ice hotel window</h3>
+    <div class="track">
+      <div class="lane ski"><h4>&#9975;&#65039; Ski crew, 7:15 to 1</h4><p>The bonus morning if legs vote yes: Saturday lifts spin at 8:30, ski till noon, home by 1. Skip it guilt-free if the 31st ran long; the tickets are the only loss.</p></div>
+      <div class="lane city"><h4>&#9749; City crew window, 10 to 12:30</h4><p>Old-city farewell lap: the market, last pastries, the photo everyone forgot to take.</p></div>
+      <div class="lane all"><h4>&#129309; From 1:30</h4><p>If the H&ocirc;tel de Glace opened this weekend (confirmed in the fall), this is its slot: 2 to 4:30, ice chandeliers, ice slide, drinks in ice glasses. If not, Str&oslash;m spa hour for Grandma and the moms while the dads run the kids one last time down the toboggan. Big farewell dinner at La B&ucirc;che, the loud maple one, on purpose.</p></div>
+    </div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Sun Jan 3 &bull; Home</h3>
+    <p>Pack, one last square lap, midday flight, land Houston, drive to Livingston by evening. The buffer day did its job: nobody's walking into Monday off a red-eye.</p>
+    <div class="note"><b>The pull-in option, if we want it:</b> everything above survives shifting to a Sat Jan 2 departure; Ski Day 3 and the ice-hotel window are the two things that fall off. Decide when we book flights, not now.</div>
+  </div></div>
+
+</section>
+
+<!-- ================= PANEL 3: STAY & EAT ================= -->
+<section id="p-stay" class="panel">
+
+  <div class="sec">
+    <span class="eyebrow">Home base</span>
+    <h2 class="slab">Two lofts inside the walls</h2>
+    <p class="lead">The whole two-track system works because home base sits in the middle of everything: ski crews leave without waking anyone, slow mornings start at the window, and 1:30 reunions need no driving.</p>
+  </div>
+
+  <div class="card"><div class="card-body">
+    <span class="ribbon top">Book first: the home base</span>
+    <h3 class="slab">Les Lofts Ste-Anne</h3>
+    <div class="where">42 Rue Sainte-Anne &bull; facing the holiday market square</div>
+    <div class="chips"><span class="chip star">&#9733; 4.7 (76)</span><span class="chip ok">Full kitchens + free laundry</span><span class="chip ok">Bunk rooms for the kids</span><span class="chip ice">Underground parking below the square</span></div>
+    <p>Two apartment lofts in one historic building facing the market square: kitchens for slow breakfasts and the cook-in night, laundry for ski gear, bunks the kids will fight over, and the toboggan a five minute walk away. Grandma gets a real bedroom in the quieter loft. Reviewers call the hosts' recommendation list "essentially our itinerary," which tells you the kind of operation it is.</p>
+    <div class="mom"><b>&#10084;&#65039; Grandma factor:</b> request the low-floor unit at booking, her own room, and a window seat on the square. Her mornings happen in a robe with the best view in the building.</div>
+    <div class="actions">
+      <a class="btn solid" href="https://www.google.com/search?tbm=isch&amp;q=Les+Lofts+Ste-Anne+Quebec" target="_blank" rel="noopener">&#128247; Photos</a>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Les+Lofts+Ste-Anne+42+Rue+Sainte-Anne+Quebec" target="_blank" rel="noopener">&#128506;&#65039; Map</a>
+    </div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <span class="ribbon pick">The upgrade, if it's open</span>
+    <h3 class="slab">Le Royal Dalhousie condo-suites</h3>
+    <div class="where">225 C&ocirc;te de la Montagne &bull; rooftop terrace facing the Ch&acirc;teau</div>
+    <div class="chips"><span class="chip star">&#9733; 4.9 (97)</span><span class="chip">Owner greets you personally</span><span class="chip warn">Few units, books first</span></div>
+    <p>The highest-rated address in the old city. If two suites are open for our eight nights, the upgrade fund goes here and New Year's fireworks get watched from a private rooftop. Call the week we book flights; this is the one that sells out.</p>
+    <div class="actions">
+      <a class="btn solid" href="https://www.google.com/search?tbm=isch&amp;q=Le+Royal+Dalhousie+Quebec+rooftop" target="_blank" rel="noopener">&#128247; Photos</a>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=225+Cote+de+la+Montagne+Quebec" target="_blank" rel="noopener">&#128506;&#65039; Map</a>
+    </div>
+  </div></div>
+
+  <div class="sec"><span class="eyebrow">The tables</span><h2 class="slab">Where we eat, by job</h2></div>
+
+  <div class="card"><div class="card-body">
+    <details open><summary>&#127860; Book before we fly</summary><div class="inner"><ul class="todo">
+      <li><b><span class="rank-tag">The family feast &times;2</span>La B&ucirc;che</b><span>Maple-everything Qu&eacute;b&eacute;cois sugar shack: crepes, tourti&egrave;re, maple bacon, loud and joyful. Slotted twice: the first-morning breakfast and the farewell dinner. &#9733; 4.5 (9,350)</span> <a href="https://www.google.com/search?tbm=isch&amp;q=La+Buche+restaurant+Quebec+City" target="_blank" rel="noopener">Photos</a> &bull; <a href="https://www.google.com/maps/search/?api=1&amp;query=La+Buche+49+Rue+Saint-Louis+Quebec" target="_blank" rel="noopener">Map</a></li>
+      <li><b><span class="rank-tag">The charmer</span>Le Lapin Saut&eacute;</b><span>Fifteen fireplace-lit tables at the foot of Petit Champlain: rabbit pie, onion soup, mini fondues. Sunday night, booked the day flights are bought. &#9733; 4.6 (4,165)</span> <a href="https://www.google.com/search?tbm=isch&amp;q=Le+Lapin+Saute+Quebec+winter" target="_blank" rel="noopener">Photos</a> &bull; <a href="https://www.google.com/maps/search/?api=1&amp;query=Le+Lapin+Saute+52+Rue+du+Petit+Champlain" target="_blank" rel="noopener">Map</a></li>
+      <li><b><span class="rank-tag">Parents' night</span>Chez Rioux &amp; Pettigrew</b><span>One of the city's top tables, elegant without stuffiness. Wednesday 7:30, four adults, while the 18 year old earns real babysitting money running movie night. &#9733; 4.7 (2,665)</span> <a href="https://www.google.com/search?tbm=isch&amp;q=Chez+Rioux+Pettigrew+Quebec" target="_blank" rel="noopener">Photos</a> &bull; <a href="https://www.google.com/maps/search/?api=1&amp;query=Chez+Rioux+et+Pettigrew+160+Rue+Saint-Paul+Quebec" target="_blank" rel="noopener">Map</a></li>
+    </ul></div></details>
+    <details><summary>&#127860; The walk-in rotation</summary><div class="inner"><ul class="todo">
+      <li><b><span class="rank-tag alt">Two doors down</span>La Buchette</b><span>Landing-night dinner and the poutine benchmark of the trip, on our own street. &#9733; 4.6 (995)</span> <a href="https://www.google.com/search?tbm=isch&amp;q=La+Buchette+Quebec+poutine" target="_blank" rel="noopener">Photos</a> &bull; <a href="https://www.google.com/maps/search/?api=1&amp;query=La+Buchette+24+Rue+Sainte-Anne+Quebec" target="_blank" rel="noopener">Map</a></li>
+      <li><b><span class="rank-tag alt">Kid-easy classic</span>Cochon Dingue</b><span>Burgers, ribs, breakfast all day, steps from the toboggan. The Jan 1 recovery brunch. &#9733; 4.4 (5,024)</span> <a href="https://www.google.com/search?tbm=isch&amp;q=Cochon+Dingue+Quebec" target="_blank" rel="noopener">Photos</a> &bull; <a href="https://www.google.com/maps/search/?api=1&amp;query=Cochon+Dingue+46+Boulevard+Champlain+Quebec" target="_blank" rel="noopener">Map</a></li>
+      <li><b><span class="rank-tag alt">Crowd-pleaser</span>Savini</b><span>Pastas every kid recognizes, cocktails the adults do, also on our street. &#9733; 4.8 (2,258)</span> <a href="https://www.google.com/search?tbm=isch&amp;q=Savini+Vieux+Quebec" target="_blank" rel="noopener">Photos</a> &bull; <a href="https://www.google.com/maps/search/?api=1&amp;query=Savini+32+Rue+Sainte-Anne+Quebec" target="_blank" rel="noopener">Map</a></li>
+      <li><b><span class="rank-tag alt">Brewpub lunch</span>Archibald</b><span>Big friendly room by the funicular's lower station: poutine, tacos, local beer. &#9733; 4.7 (3,502)</span> <a href="https://www.google.com/search?tbm=isch&amp;q=Archibald+Microbrasserie+Quebec" target="_blank" rel="noopener">Photos</a> &bull; <a href="https://www.google.com/maps/search/?api=1&amp;query=Archibald+40+Rue+du+Marche-Champlain+Quebec" target="_blank" rel="noopener">Map</a></li>
+      <li><b><span class="rank-tag alt">If the fund survives</span>L&eacute;gende</b><span>The boreal tasting-menu heavyweight, in case the upgrade fund reaches day six intact. &#9733; 4.8 (1,370)</span> <a href="https://www.google.com/search?tbm=isch&amp;q=Legende+restaurant+Quebec" target="_blank" rel="noopener">Photos</a> &bull; <a href="https://www.google.com/maps/search/?api=1&amp;query=Legende+255+Rue+Saint-Paul+Quebec" target="_blank" rel="noopener">Map</a></li>
+    </ul></div></details>
+    <div class="note"><b>The kitchen play:</b> lofts mean big breakfasts in, one grocery run on day one, and the Tuesday cook-in. Restaurant money goes where it's felt, and the food line stays honest for nine.</div>
+  </div></div>
+
+</section>
+
+<!-- ================= PANEL 4: THE MONEY ================= -->
+<section id="p-money" class="panel">
+
+  <div class="sec">
+    <span class="eyebrow">All in, Livingston to Livingston</span>
+    <h2 class="slab">The Money</h2>
+    <p class="lead">Planning estimates in US dollars for nine travelers, eight nights, driveway to driveway, priced to what this plan actually does: 2 to 3 ski mornings for one family, one for the other, and a city week for everyone. Peak-week numbers swing; these are honest centers we'll firm up at booking.</p>
+  </div>
+
+  <div class="card"><div class="card-body">
+    <span class="ribbon top">Quebec City, as planned &bull; ~$25,000</span>
+    <h3 class="slab">The breakdown</h3>
+    <ul class="todo">
+      <li><b>Flights, 9 seats: ~$7,200</b><span>IAH to YQB round trip, one stop, holiday fares near $800 a seat booked by early fall. Priced against the Montreal-plus-drive path at booking; cheapest sane option wins.</span></li>
+      <li><b>Lodging, 2 lofts, 8 nights: ~$5,500</b><span>Two full-kitchen lofts inside the walls at holiday rates. The Royal Dalhousie upgrade, if open, adds about $1,000 from the fund below.</span></li>
+      <li><b>Vans, fuel, parking: ~$2,000</b><span>Two minivans for nine days with legally required winter tires, underground parking below the square, gas for the mountain and Valcartier runs.</span></li>
+      <li><b>Food, 9 days: ~$3,600</b><span>Loft breakfasts and the cook-in against the full restaurant lineup, splurge night included.</span></li>
+      <li><b>Skiing, the real shape of it: ~$2,400</b><span>Ski crew: adult tickets and rentals for 2 to 3 mornings plus two days of kids' ski school. City crew: four tickets and rentals for the one joint morning. Grandma's gondola rides ride along for pocket change.</span></li>
+      <li><b>Valcartier tubing day: ~$450</b><span>Day passes for the eight who tube; Grandma spectates free. Ice hotel entry, if it opens in our window, adds about $300 for nine.</span></li>
+      <li><b>The rest of the fun: ~$900</b><span>Toboggan runs all week, skating, the carriage ride, Str&oslash;m spa hour, museum, Montmorency cable car.</span></li>
+      <li><b>Winter gear for Texans: ~$1,200</b><span>Real coats, boots, gloves, thermals for nine, bought before we fly. Non-negotiable, reusable, and the difference between magic and misery.</span></li>
+      <li><b>Travel insurance: ~$650</b><span>Nine travelers, international, ski days on the itinerary. Cheap against one twisted knee.</span></li>
+      <li><b>Buffer: ~$1,500</b><span>The line that keeps every other line honest.</span></li>
+    </ul>
+    <div class="chips"><span class="chip star">Total: ~$25,400</span><span class="chip ok">~$4,600 under the $30K ceiling</span></div>
+    <div class="note"><b>The upgrade fund, in priority order:</b> Royal Dalhousie suites if available (~$1,000), the ice hotel if it opens in-window (~$300), Ski Day 3 tickets if legs vote yes (~$600), L&eacute;gende for the adults (~$800), and whatever's left flies home with us.</div>
+    <div class="catch"><b>&#9888;&#65039; The two swings:</b> holiday airfare (book by early fall or add $150 to $300 a seat) and the exchange rate, which has favored the US dollar for years and quietly discounts every Canadian number above. Once flights and lofts are booked, roughly 60 percent of this budget is locked and the estimate becomes a bill.</div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Bottom line</h3>
+    <p>Eight nights, New Year's inside the walls, real skiing for the family that skis, a real city for the family that doesn't, Grandma's rhythm respected every single day, and about $4,600 of air under the ceiling. The booking order when the family says go: flights, lofts, ski school, the three dinner tables. I'd make those calls in one afternoon.</p>
+  </div></div>
+
+</section>
+
+</div><!-- /wrap -->
+
+<footer class="foot">
+  <span class="slab">One family. Six ages. Zero thin air.</span>
+  Elevations and flight times are approximate; verify when booking. Every ranked pick sits at least 43 percent lower than Granby, Colorado.
+</footer>
+
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.tab[data-target]');
+  var panels = document.querySelectorAll('.panel');
+  function show(id){
+    for (var i=0;i<panels.length;i++){ panels[i].classList.toggle('active', panels[i].id===id); }
+    for (var j=0;j<tabs.length;j++){ tabs[j].classList.toggle('active', tabs[j].getAttribute('data-target')===id); }
+    if (window.location.hash !== '#'+id){
+      try { history.replaceState(null, '', '#'+id); } catch(e){}
+    }
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  for (var k=0;k<tabs.length;k++){
+    (function(b){
+      var id = b.getAttribute('data-target');
+      b.addEventListener('click', function(ev){ ev.preventDefault(); show(id); });
+    })(tabs[k]);
+  }
+  var h = (window.location.hash || '').replace('#','');
+  if (h && document.getElementById(h)){ show(h); }
+})();
+</script>
+</body>
+</html>
