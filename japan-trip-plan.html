@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japan, Thanksgiving 2026: The Family Trip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Public+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F2E9; --card:#FFFDF7; --ink:#16243A; --ink2:#4A5568;
+  --navy:#16243A; --ice:#E5A9B0; --ice-d:#B3402A; --gold:#C9A227; --gold-d:#A5831B;
+  --pine:#2F5E4E; --red:#B3402A; --line:#E4DCC8;
+}
+*{box-sizing:border-box; margin:0; padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Public Sans',system-ui,sans-serif; background:var(--paper); color:var(--ink); line-height:1.55; font-size:16px}
+.wrap{max-width:860px; margin:0 auto; padding:0 16px 40px}
+.slab{font-family:'Alfa Slab One',serif; font-weight:400; letter-spacing:.01em}
+.hero{background:var(--navy); color:#FFFDF7; padding:38px 18px 30px; text-align:center; border-bottom:6px solid var(--red)}
+.hero .kicker{font-size:12.5px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:var(--ice)}
+.hero h1{font-family:'Alfa Slab One',serif; font-size:clamp(30px,7vw,52px); line-height:1.06; margin:10px 0 8px; color:#FFFDF7}
+.hero h1 b{color:var(--gold)}
+.hero .sub{font-size:15.5px; color:#E9DFE0; max-width:620px; margin:0 auto}
+.pills{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:16px}
+.pill{background:rgba(255,255,255,.08); border:1.5px solid rgba(255,255,255,.25); color:#FFFDF7; border-radius:999px; padding:6px 13px; font-size:13px; font-weight:600}
+.pill b{color:var(--gold)}
+.tabbar{position:sticky; top:0; z-index:50; background:var(--paper); border-bottom:2px solid var(--line); padding:10px 8px}
+.tabs{display:flex; gap:8px; max-width:860px; margin:0 auto; overflow-x:auto}
+.tab{flex:1 0 auto; min-width:130px; border:2px solid var(--navy); background:var(--card); color:var(--navy); border-radius:12px; padding:9px 12px; font:inherit; font-weight:800; font-size:13.5px; cursor:pointer; text-align:left}
+.tab .ico{display:block; font-size:17px}
+.tab .step{display:block; font-size:10.5px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--ice-d)}
+.tab.active{background:var(--navy); color:#FFFDF7}
+.tab.active .step{color:var(--gold)}
+html.js .panel{display:none}
+html.js .panel.active{display:block}
+.panel{padding-top:8px}
+.sec{margin:30px 0 12px}
+.eyebrow{font-size:12px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:var(--ice-d)}
+.sec h2{font-size:clamp(22px,4.6vw,30px); margin-top:4px}
+.lead{color:var(--ink2); font-size:15.5px; margin-top:6px; max-width:640px}
+.card{background:var(--card); border:2px solid var(--navy); border-radius:16px; overflow:hidden; margin:14px 0; box-shadow:4px 4px 0 rgba(22,36,58,.14)}
+.card-body{padding:16px 16px 14px}
+.card h3{font-size:clamp(19px,4vw,24px); margin-bottom:2px}
+.where{font-size:13px; font-weight:700; color:var(--ice-d); text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px}
+.chips{display:flex; flex-wrap:wrap; gap:7px; margin:8px 0}
+.chip{font-size:12.5px; font-weight:700; border:1.5px solid var(--navy); border-radius:999px; padding:4px 11px; background:#FFF}
+.chip.star{background:var(--gold); border-color:var(--gold-d); color:var(--navy)}
+.chip.ok{background:#E8F2E5; border-color:var(--pine); color:var(--pine)}
+.chip.warn{background:#F9E8E2; border-color:var(--red); color:var(--red)}
+.chip.ice{background:#F9ECED; border-color:var(--ice-d); color:var(--ice-d)}
+.ribbon{display:inline-block; font-size:11.5px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; padding:4px 11px; border-radius:6px; margin-bottom:8px}
+.ribbon.top{background:var(--gold); color:var(--navy)}
+.ribbon.pick{background:var(--ice-d); color:#FFFDF7}
+.card p{font-size:15px; margin:6px 0}
+.todo{list-style:none}
+.todo li{padding:9px 0; border-bottom:1.5px dashed var(--line); font-size:14.5px}
+.todo li:last-child{border-bottom:none}
+.todo b{display:block; font-size:14.5px}
+.todo span{color:var(--ink2); display:block; margin:2px 0 4px}
+.todo a{color:var(--ice-d); font-weight:700; text-decoration:none; border-bottom:2px solid var(--ice); font-size:13.5px}
+.rank-tag{display:inline-block; background:var(--navy); color:#FFFDF7; font-size:10.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; border-radius:5px; padding:2px 7px; margin-right:7px; vertical-align:2px}
+.rank-tag.alt{background:var(--ice-d)}
+details{border:1.5px solid var(--line); border-radius:12px; margin:10px 0; background:#FBF8EF}
+summary{cursor:pointer; padding:11px 14px; font-weight:800; font-size:14.5px; list-style:none; display:flex; align-items:center; gap:8px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+"; margin-left:auto; font-family:'Alfa Slab One',serif; color:var(--ice-d)}
+details[open] summary::after{content:"-"}
+.inner{padding:2px 14px 12px}
+.mom{font-size:13.5px; font-weight:600; background:#FDF3E3; border:1.5px dashed var(--gold-d); border-radius:10px; padding:9px 12px; margin:10px 0}
+.mom b{color:var(--gold-d); font-weight:800}
+.catch{font-size:13.5px; font-weight:600; background:#F9E8E2; border:1.5px dashed var(--red); border-radius:10px; padding:9px 12px; margin:10px 0}
+.catch b{color:var(--red); font-weight:800}
+.note{font-size:13.5px; font-weight:600; background:#F9ECED; border:1.5px dashed var(--ice-d); border-radius:10px; padding:9px 12px; margin:10px 0}
+.note b{color:var(--ice-d)}
+.actions{display:flex; flex-wrap:wrap; gap:9px; margin-top:12px}
+.btn{display:inline-block; font-weight:800; font-size:13.5px; text-decoration:none; border-radius:10px; padding:9px 14px; border:2px solid var(--navy)}
+.btn.solid{background:var(--navy); color:#FFFDF7}
+.btn.ghost{background:transparent; color:var(--navy)}
+.btn.gold{background:var(--gold); border-color:var(--gold-d); color:var(--navy)}
+.track{display:flex; gap:10px; flex-wrap:wrap; margin:10px 0}
+.lane{flex:1 1 240px; border:1.5px solid var(--line); border-radius:12px; padding:10px 12px; background:#FBF8EF}
+.lane h4{font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin-bottom:4px}
+.lane.ski h4{color:var(--ice-d)} .lane.city h4{color:var(--gold-d)} .lane.all{background:#E8F2E5; border-color:var(--pine)} .lane.all h4{color:var(--pine)}
+.lane p{font-size:13.5px; color:var(--ink2); margin:0}
+.foot{background:var(--navy); color:#E9DFE0; text-align:center; padding:26px 16px; font-size:13.5px; margin-top:40px; border-top:6px solid var(--red)}
+.foot .slab{color:var(--gold); display:block; font-size:19px; margin-bottom:6px}
+.fldrow{display:flex; flex-wrap:wrap; gap:10px}
+.fldrow .fld{flex:1 1 140px}
+.fld{margin:9px 0}
+.fld label{display:block; font-size:12.5px; font-weight:700; color:var(--navy); margin-bottom:4px; line-height:1.3}
+.fld .hint{font-weight:600; color:var(--ink2); font-size:11px}
+.fld input, .fld select, .fld textarea{width:100%; padding:9px 11px; border:1.5px solid var(--line); border-radius:9px; font:inherit; font-size:14px; background:#FFFDF7; color:var(--ink)}
+.fld input:focus, .fld select:focus, .fld textarea:focus{outline:none; border-color:var(--ice-d)}
+.req{display:inline-block; font-size:10px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#fff; background:var(--red); border-radius:4px; padding:1px 6px; vertical-align:1px}
+.optn{font-size:11px; font-weight:600; color:var(--ice-d)}
+.person>summary{background:#FBF8EF; font-size:15px}
+.reqnote{font-size:12px; color:var(--ink2); margin:2px 0 10px}
+.copybtn{margin-top:10px; cursor:pointer}
+.copied{display:none; margin-left:10px; font-size:13px; font-weight:700; color:var(--pine)}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<div class="hero">
+  <div class="kicker">Family Trip Planning &bull; Thanksgiving Break 2026</div>
+  <h1>Japan: <b>The Trip of Trips</b></h1>
+  <p class="sub">Eight of us, one big week, three worlds and a Frozen castle: neon Tokyo, a hot-spring night staring at Mt. Fuji, and thousand-year-old Kyoto at peak fall color, stitched together by 200 mph bullet trains. Late November is the single best week of the year to be in Japan, and it's our week.</p>
+  <div class="pills">
+    <span class="pill"><b>Nov 20 to 29</b> &bull; zero school missed</span>
+    <span class="pill">Tokyo &bull; Mt. Fuji &bull; Kyoto &bull; Nara</span>
+    <span class="pill"><b>8</b> travelers, ages 4 to 38</span>
+    <span class="pill">~<b>$29K</b> of a <b>$35K</b> ceiling</span>
+  </div>
+</div>
+
+<div class="tabbar"><div class="tabs">
+  <button type="button" class="tab active" data-target="p-plan"><span class="ico">&#129517;</span><span class="step">Start here</span>How The Trip Works</button>
+  <button type="button" class="tab" data-target="p-days"><span class="ico">&#128198;</span><span class="step">Nov 20 to 29</span>Day by Day</button>
+  <button type="button" class="tab" data-target="p-stay"><span class="ico">&#127961;&#65039;</span><span class="step">Beds + tables</span>Stay &amp; Eat</button>
+  <button type="button" class="tab" data-target="p-money"><span class="ico">&#128176;</span><span class="step">All in</span>The Money</button>
+  <button type="button" class="tab" data-target="p-book"><span class="ico">&#127890;</span><span class="step">Read before we fly</span>Before We Go</button>
+  <button type="button" class="tab" data-target="p-desk"><span class="ico">&#128736;&#65039;</span><span class="step">Hunter only</span>The Planner&#39;s Desk</button>
+  <button type="button" class="tab" data-target="p-there"><span class="ico">&#128737;&#65039;</span><span class="step">In your pocket</span>While We&#39;re There</button>
+  <button type="button" class="tab" data-target="p-info"><span class="ico">&#128101;</span><span class="step">For the planner</span>Family Info</button>
+</div></div>
+
+<div class="wrap">
+
+<!-- ================= PANEL 1 ================= -->
+<section id="p-plan" class="panel active">
+
+  <div class="sec">
+    <span class="eyebrow">Why this week, why Japan</span>
+    <h2 class="slab">We're aiming at Japan's best week</h2>
+    <p class="lead">Late November is when Kyoto's fall foliage peaks (entire temple gardens in red and gold), the air turns crisp and clear, and Mt. Fuji hits its most visible season of the year. It's also our Thanksgiving break. That's not a coincidence we planned; it's one we get to cash in.</p>
+  </div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">The shape of it</h3>
+    <ul class="todo">
+      <li><b>One Friday red-eye, three worlds</b><span>Out Friday night after school, a quick LA connection, and we land Tokyo Sunday morning with the day ahead of us instead of behind us. That gained morning is exactly what lets us add Disney on a weekday with zero school missed. The route: 3 Tokyo nights up front with a full Disney day on Tuesday, 1 night at a Mt. Fuji hot-spring ryokan, 2 nights in Kyoto plus a Nara day, and 1 last Tokyo night before flying home Sunday. No backtracking, no wasted days.</span></li>
+      <li><b>The bullet trains are an attraction, not a transfer</b><span>Two shinkansen rides at up to roughly 200 mph: Fuji country to Kyoto on Thanksgiving Day, and Kyoto back to Tokyo at sunset on the last full day. Window seats booked on the Fuji side both times.</span></li>
+      <li><b>No rental cars, on purpose</b><span>Japan's trains are the best on earth and family-friendly: elevators everywhere, seats reserved, nobody parallel parks. We use prepaid transit cards for the city, reserved seats for the long hauls, and one clever trick below for the luggage.</span></li>
+      <li><b>The luggage trick that makes it all work</b><span>Japan's luggage-forwarding service (takkyubin) ships our big bags from the Tokyo hotel straight to the Kyoto hotel for about $15 a bag. We travel to Mt. Fuji with daypacks only, the bags beat us to Kyoto, and nobody hauls eight suitcases up a mountain.</span></li>
+    </ul>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">The daily rhythm (same system as always)</h3>
+    <div class="track">
+      <div class="lane ski"><h4>&#127749; Early crew</h4><p>Japan rewards the jet-lagged: temples and shrines are empty and magical at 7 to 8am. Whoever's up goes; it's a 15 minute walk back to the beds either way.</p></div>
+      <div class="lane city"><h4>&#9749; Slow crew</h4><p>Apartment-hotel breakfasts, no alarms, a wander window from 10 to noon. Convenience-store breakfast in Japan is genuinely part of the experience.</p></div>
+      <div class="lane all"><h4>&#129309; Together from noon</h4><p>Mornings split by energy, afternoons run together: the big anchors (gardens, shows, deer, feasts, light museums) sit after lunch so early birds and sleepers both make every one. One meeting point per city, one time: noon at the lobby.</p></div>
+    </div>
+    <div class="mom"><b>&#10084;&#65039; Built for the littles:</b> everything on this route is stroller-flat and train-connected: escalators and elevators at every station, reserved seats on every long haul, a gondola instead of any climb at Fuji, and a konbini snack never more than a block away. The 4 and 6 year old set the pace, and the plan never feels slow for the teens doing it.</div>
+    <div class="note"><b>Jet lag, played honestly:</b> Japan is 15 hours ahead. The play is simple: sleep on the plane, push through to 9pm local the first night, and the kids will wake up at 6am ready to beat every crowd in Tokyo, which is exactly what we want.</div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Book-before-we-fly list (the sellouts)</h3>
+    <ul class="todo">
+      <li><b>Flights this month, red-eye first</b><span>It is July and the trip is November, about 19 weeks out, already late-normal for Thanksgiving fares. Step one is confirming the Friday night routing through LA prices and connects for Nov 20; if it does, eight seats on it are the budget's biggest lever, and every week of waiting costs real money.</span></li>
+      <li><b>teamLab Planets timed tickets</b><span>The barefoot digital-art world (4.5 stars, 53,000+ reviews). Timed entry, sells out weeks ahead. Booked the day flights are.</span></li>
+      <li><b>The ryokan night</b><span>Fuji-view rooms with dinner for eight over a holiday week: booked months out, and it's the night everyone will talk about forever.</span></li>
+      <li><b>The sumo dinner show</b><span>Asakusa Sumo Club: retired wrestlers, live bouts, an English-speaking MC, and all-you-can-eat chanko nabe, the hotpot sumo wrestlers actually train on. Reviewers bring kids as young as 3; seats book out, so reserve with flights.</span></li>
+      <li><b>Kyoto night illumination + Thanksgiving table</b><span>The autumn temple light-up schedule publishes in fall (they run right in our window most years); the wagyu feast for eight books when it does.</span></li>
+      <li><b>&#128706; Eight passports, the tightest clock we have</b><span>Everyone needs one, kids under 16 apply in person with both parents, and November travel means passports in hand by October. Appointments this week, and pay for expedited service without blinking if routine timing runs long.</span> <a href="https://travel.state.gov" target="_blank" rel="noopener">travel.state.gov</a></li>
+    </ul>
+    <div class="catch"><b>&#9888;&#65039; Two honest flags:</b> Mt. Fuji is shy; late November is statistically her most visible season and sunrise is the clearest hour, but no one can guarantee a mountain. And Monday Nov 23 is a Japanese national holiday, so we keep that day on the indoor and temple stops with early starts, and deliberately put Disney on Tuesday instead of the holiday.</div>
+  </div></div>
+
+</section>
+
+<!-- ================= PANEL 2 ================= -->
+<section id="p-days" class="panel">
+
+  <div class="sec">
+    <span class="eyebrow">Nov 20 to 29 &bull; windows, not schedules</span>
+    <h2 class="slab">Day by Day</h2>
+    <p class="lead">Times are anchors and loose windows, same as always. The only hard-booked items are flights, trains, the ryokan, teamLab, the sumo show, Disney, and the Thanksgiving table.</p>
+  </div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Fri Nov 20 &bull; Wheels up after school</h3>
+    <p>Kids out of school, drive Livingston to IAH, evening flight to Los Angeles, then connect to the overnight to Tokyo. No Houston hotel night this time; we are airborne by dinner. Movies, then everyone sleeps on the Pacific leg because tomorrow disappears.</p>
+    <div class="track"><div class="lane all"><h4>&#129309; Everyone</h4><p>Travel starts. The one job tonight: sleep on the plane.</p></div></div>
+    <div class="note"><b>The one thing to confirm first:</b> this Friday red-eye through LA is what makes the whole zero-school-missed, Disney-on-a-weekday plan work, so step one of booking is making sure it actually prices and connects for Nov 20. If it does not, the fallback is the Saturday nonstop with Disney on the holiday Monday.</div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Sat Nov 21 &bull; The crossing</h3>
+    <p>Somewhere over the Pacific, Saturday mostly disappears into the international date line. Sleep, hydrate, watch movies, and tell the kids they will get the day back on the way home. It is the first physics lesson of the trip.</p>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Sun Nov 22 &bull; Land Sunday morning, straight into Tokyo</h3>
+    <p>Land in the morning with the whole day ahead of us, which is the entire point of the red-eye. Train into the city, drop bags at the Ueno apartments, and go: Senso-ji, Tokyo's oldest temple, then Nakamise street for the first candied-strawberry skewers (ichigo ame), Ameyoko market's neon and noise, and a conveyor-belt sushi dinner where plates whiz past on a track. Fight the jet lag to 9pm and the kids wake at dawn ready to beat every crowd.</p>
+    <div class="track"><div class="lane all"><h4>&#129309; Everyone, easy</h4><p>First wide-eyed walk, first tanghulu, first sushi-by-train. Low bar on purpose; it is a landing day.</p></div></div>
+    <div class="actions"><a class="btn solid" href="https://www.google.com/search?tbm=isch&amp;q=Sensoji+temple+Asakusa+lantern" target="_blank" rel="noopener">&#128247; Senso-ji</a><a class="btn ghost" href="https://www.google.com/search?tbm=isch&amp;q=ichigo+ame+strawberry+tanghulu+Japan" target="_blank" rel="noopener">&#127827; Tanghulu</a><a class="btn ghost" href="https://www.google.com/search?tbm=isch&amp;q=conveyor+belt+sushi+Japan+kids" target="_blank" rel="noopener">&#128247; Conveyor sushi</a></div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Mon Nov 23 &bull; The big Tokyo day</h3>
+    <div class="track">
+      <div class="lane ski"><h4>&#127749; Early crew, 7:30 to 10</h4><p>Shibuya Crossing before the crush, Hachiko photo, then the teens vanish into a multi-floor arcade with a fistful of 100 yen coins.</p></div>
+      <div class="lane city"><h4>&#9749; Slow crew, until noon</h4><p>Apartment breakfast, meet at the Harajuku station point at noon.</p></div>
+      <div class="lane all"><h4>&#129309; From noon</h4><p>teamLab Planets, the barefoot walk-through-water digital art world (timed ticket), then Harajuku's Takeshita Street for tanghulu round two and rainbow chaos, then Meiji Shrine's silent forest as the reset. Evening lands the showpiece: the sumo dinner show at Asakusa Sumo Club, retired wrestlers in a real ring, geisha dance, English MC, and all-you-can-eat chanko nabe at your seat. If the 6 year old raises a hand, that shove-a-wrestler photo hangs in the hallway forever.</p></div>
+    </div>
+    <div class="note"><b>Holiday note:</b> today is Japan's Labor Thanksgiving holiday, so we keep it on the indoor and forest stops (teamLab is a timed ticket, the sumo show is a reserved seat) and save the wide-open park for tomorrow.</div>
+    <div class="actions"><a class="btn gold" href="https://www.google.com/search?tbm=isch&amp;q=teamLab+Planets+Tokyo+water+flowers" target="_blank" rel="noopener">&#128247; teamLab Planets</a><a class="btn solid" href="https://www.google.com/search?tbm=isch&amp;q=Shibuya+crossing+night" target="_blank" rel="noopener">&#128247; Shibuya</a><a class="btn ghost" href="https://www.google.com/search?tbm=isch&amp;q=Asakusa+Sumo+Club+show+chanko+nabe" target="_blank" rel="noopener">&#128247; Sumo show</a></div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Tue Nov 24 &bull; The Frozen day at Tokyo DisneySea</h3>
+    <p>Rope drop or bust: 40 minutes on the train, gates before opening, and straight to Fantasy Springs, the new land with an actual Arendelle: Elsa's castle on the water and the Frozen boat ride the 4 and 6 year old have been promised since July. Then the rest of DisneySea, widely called the most beautiful Disney park on earth: a volcano in the middle, gondolas over a harbor, and rides the teens will not admit they loved. A weekday visit dodges both the weekend and yesterday's holiday, so lines are as short as this park gets over the season.</p>
+    <div class="chips"><span class="chip star">Fantasy Springs: the Frozen land</span><span class="chip ok">Weekday = the lightest crowds of the week</span><span class="chip ice">Premier Access on the Frozen ride</span></div>
+    <div class="actions"><a class="btn gold" href="https://www.google.com/search?tbm=isch&amp;q=Fantasy+Springs+Frozen+Arendelle+Tokyo+DisneySea" target="_blank" rel="noopener">&#128247; Arendelle</a><a class="btn ghost" href="https://www.google.com/search?tbm=isch&amp;q=Tokyo+DisneySea+harbor+volcano" target="_blank" rel="noopener">&#128247; DisneySea</a></div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Wed Nov 25 &bull; To the mountain (the kick-back day)</h3>
+    <p>Big bags ship to Kyoto this morning (the takkyubin trick); we board the direct Fuji Excursion train with daypacks, about 2 hours to Lake Kawaguchiko. Afternoon: the ropeway (a gondola, zero stairs) to a deck staring across the lake at Fuji, then a lake cruise below. By mid-afternoon we are at the ryokan: shoes off, yukata robes on, outdoor hot-spring baths facing the mountain, and a multi-course kaiseki dinner served in-house. The deliberate slow-down in the middle of the trip, and the night everyone talks about after.</p>
+    <div class="track"><div class="lane all"><h4>&#129309; Everyone, unwound</h4><p>This is the kick-back day. The onsen at dusk, Fuji going pink, nowhere to be.</p></div></div>
+    <div class="actions"><a class="btn solid" href="https://www.google.com/search?tbm=isch&amp;q=Lake+Kawaguchiko+Mt+Fuji+autumn" target="_blank" rel="noopener">&#128247; Kawaguchiko</a><a class="btn gold" href="https://www.google.com/search?tbm=isch&amp;q=ryokan+onsen+Mount+Fuji+view" target="_blank" rel="noopener">&#128247; The onsen view</a><a class="btn ghost" href="https://www.google.com/search?tbm=isch&amp;q=kaiseki+dinner+ryokan+yukata" target="_blank" rel="noopener">&#128247; Kaiseki night</a></div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Thu Nov 26 &bull; Thanksgiving: sunrise Fuji, 200 mph, and a wagyu feast</h3>
+    <div class="track">
+      <div class="lane ski"><h4>&#127749; Dawn, from the pillow</h4><p>Sunrise is Fuji's clearest hour, and every room faces her. The photo happens in pajamas.</p></div>
+      <div class="lane all"><h4>&#129309; The whole day</h4><p>Slow lakeside morning (Oishi Park's view is the free postcard), then the ride: our first shinkansen, Fuji country to Kyoto in about two hours at close to 200 mph. The kids watch the speedometer on the seat map. Kyoto by late afternoon, check in across from the station, then Gion at lantern light. Thanksgiving dinner, Japanese edition: a wagyu sukiyaki feast in Gion, thin-sliced beef swished in bubbling pots at the table, family-style, which is exactly what Thanksgiving is supposed to feel like, 6,500 miles from the turkey.</p></div>
+    </div>
+    <div class="actions"><a class="btn solid" href="https://www.google.com/search?tbm=isch&amp;q=shinkansen+bullet+train+Mt+Fuji" target="_blank" rel="noopener">&#128247; The bullet train</a><a class="btn gold" href="https://www.google.com/search?tbm=isch&amp;q=wagyu+sukiyaki+dinner+Kyoto" target="_blank" rel="noopener">&#128247; The feast</a><a class="btn ghost" href="https://www.google.com/search?tbm=isch&amp;q=Gion+Kyoto+night+lanterns" target="_blank" rel="noopener">&#128247; Gion at night</a></div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Fri Nov 27 &bull; Kyoto's greatest hits at peak color</h3>
+    <div class="track">
+      <div class="lane ski"><h4>&#127749; Early crew, 7:30 to 11</h4><p>Arashiyama bamboo grove right at opening, green light and creaking stalks with almost nobody in it; the teens add the monkey park climb.</p></div>
+      <div class="lane city"><h4>&#9749; Slow crew, until noon</h4><p>Kyoto Station's own stairs light show, or nothing at all. Meet at the lobby at noon.</p></div>
+      <div class="lane all"><h4>&#129309; From noon</h4><p>Kinkaku-ji, the Golden Pavilion, floating over its pond ringed in red maples: this week is exactly why photographers fly across the planet. Then a family tea ceremony (short, hands-on, littles welcome), and after dark the closer: an autumn night illumination at one of the great temples, maple canopies lit like stained glass.</p></div>
+    </div>
+    <div class="actions"><a class="btn solid" href="https://www.google.com/search?tbm=isch&amp;q=Arashiyama+bamboo+grove+morning" target="_blank" rel="noopener">&#128247; Bamboo grove</a><a class="btn gold" href="https://www.google.com/search?tbm=isch&amp;q=Kinkakuji+autumn+leaves+Kyoto" target="_blank" rel="noopener">&#128247; Golden Pavilion</a><a class="btn ghost" href="https://www.google.com/search?tbm=isch&amp;q=Kyoto+autumn+night+illumination+temple" target="_blank" rel="noopener">&#128247; Night illumination</a></div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Sat Nov 28 &bull; A thousand gates, a thousand deer, one sunset train</h3>
+    <div class="track">
+      <div class="lane ski"><h4>&#127749; Dawn crew, 7 to 9:30</h4><p>Fushimi Inari's tunnels of ten thousand vermillion gates, nearly empty at 7am. The lower loop is 45 minutes and the photo of the whole trip.</p></div>
+      <div class="lane city"><h4>&#9749; Slow crew, until 11</h4><p>Nishiki Market graze, Kyoto's 400-year-old food alley, or pack-and-coffee at the hotel.</p></div>
+      <div class="lane all"><h4>&#129309; From 11</h4><p>Everyone on the 45 minute train to Nara: wild deer that bow for crackers (the 4 year old's core memory, guaranteed), the Great Buddha at Todai-ji inside a wooden hall the size of a stadium, flat ground the whole way, and the high-speed mochi-pounding show at Nakatanidou with fresh warm mochi after. Back to Kyoto by 3:30, grab the shipped bags, and board the 4:30 shinkansen to Tokyo with sunset out the Fuji-side windows. Final night near Ueno; teens get one last late ramen.</p></div>
+    </div>
+    <div class="actions"><a class="btn solid" href="https://www.google.com/search?tbm=isch&amp;q=Fushimi+Inari+torii+gates+empty+morning" target="_blank" rel="noopener">&#128247; The gates</a><a class="btn gold" href="https://www.google.com/search?tbm=isch&amp;q=Nara+deer+bowing+crackers" target="_blank" rel="noopener">&#128247; Bowing deer</a><a class="btn ghost" href="https://www.google.com/search?tbm=isch&amp;q=Todaiji+Great+Buddha+Nara" target="_blank" rel="noopener">&#128247; Great Buddha</a></div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Sun Nov 29 &bull; Land before you took off</h3>
+    <p>Morning flight home, and the date line pays us back: leave Tokyo Sunday morning, land in Houston Sunday, home in Livingston by evening. The kids get to say they time-traveled. Everyone at school and work Monday, nobody missed a thing, and eight people carry home the same one week of stories.</p>
+  </div></div>
+
+</section>
+
+<section id="p-stay" class="panel">
+
+  <div class="sec">
+    <span class="eyebrow">Home bases</span>
+    <h2 class="slab">Where we sleep, all verified</h2>
+    <p class="lead">Japan's secret weapon for an eight-person crew is the apartment hotel: real kitchens, laundry, bunk beds, and staff who treat kids like royalty. We use the same brand in Tokyo and Kyoto so the second check-in feels like coming home.</p>
+  </div>
+
+  <div class="card"><div class="card-body">
+    <span class="ribbon top">Tokyo base &bull; 4 nights total</span>
+    <h3 class="slab">MIMARU Tokyo Ueno</h3>
+    <div class="where">Ueno, Tokyo &bull; two neighboring locations, East and North</div>
+    <div class="chips"><span class="chip star">&#9733; 4.7 (1,500+ each)</span><span class="chip ok">Apartments with kitchens + laundry</span><span class="chip ok">Bunk beds, even Pok&eacute;mon-themed rooms</span><span class="chip ice">Quiet streets, 2 subway stops from everything</span></div>
+    <p>Family apartments, not hotel rooms: dining tables for whole-crew breakfasts, washers for mid-trip laundry, bunk rooms the kids claim on sight, and yes, actual Pok&eacute;mon-themed family rooms if we book early enough to win one for the littles. Reviewers with kids call the staff the best part. Ueno puts us on quiet streets with a giant park, the zoo's pandas, and Ameyoko market all walkable, and it's the easy express ride to the airport on both ends. We book two or three apartments here for nights 1 to 3, and return for the final night.</p>
+    <div class="mom"><b>&#10084;&#65039; Two-family factor:</b> each family gets its own apartment: separate bedtimes for the littles, separate mornings for the teens, one shared table when it counts. No hotel-lobby chaos.</div>
+    <div class="actions">
+      <a class="btn solid" href="https://www.google.com/search?tbm=isch&amp;q=MIMARU+Tokyo+Ueno+family+apartment+room" target="_blank" rel="noopener">&#128247; Photos</a>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=MIMARU+Tokyo+Ueno+East" target="_blank" rel="noopener">&#128506;&#65039; Map</a>
+    </div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <span class="ribbon pick">The crown-jewel night &bull; Lake Kawaguchiko</span>
+    <h3 class="slab">Ubuya ryokan, with La Vista Fuji as the alternate</h3>
+    <div class="where">Lake Kawaguchiko, Mt. Fuji &bull; every room faces the mountain</div>
+    <div class="chips"><span class="chip star">Ubuya &#9733; 4.4 (1,754)</span><span class="chip star">La Vista &#9733; 4.4 (1,843)</span><span class="chip ok">Onsen baths + dinner and breakfast included</span><span class="chip ice">Station shuttle, zero driving</span></div>
+    <p>One night done properly: a lakeside ryokan where Fuji fills every window, dinner is a multi-course Japanese feast (Ubuya offers an A5 wagyu shabu-shabu option in a private dining room, which with eight of us is exactly how we'd book it), and the evening is hot-spring soaking while the mountain goes pink. La Vista Fuji is the equal-rated alternate with private-reservation onsen baths, which some of our crew may prefer over shared ones; we price both and take whichever has the better eight-person room block. This is the splurge line in the budget, on purpose.</p>
+    <div class="mom"><b>&#10084;&#65039; The night that sells the trip:</b> Fuji from the bed, hot mineral baths after four days of walking, dinner brought to the table, kids in tiny yukata robes. This is the photo that ends up framed.</div>
+    <div class="actions">
+      <a class="btn solid" href="https://www.google.com/search?tbm=isch&amp;q=Ubuya+ryokan+Kawaguchiko+Fuji+view+room" target="_blank" rel="noopener">&#128247; Ubuya</a>
+      <a class="btn gold" href="https://www.google.com/search?tbm=isch&amp;q=La+Vista+Fuji+Kawaguchiko+onsen" target="_blank" rel="noopener">&#128247; La Vista</a>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Ubuya+Fujikawaguchiko" target="_blank" rel="noopener">&#128506;&#65039; Map</a>
+    </div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <span class="ribbon top">Kyoto base &bull; 2 nights</span>
+    <h3 class="slab">MIMARU Kyoto Station</h3>
+    <div class="where">Directly across from Kyoto Station</div>
+    <div class="chips"><span class="chip star">&#9733; 4.8 (479)</span><span class="chip ok">Same family-apartment setup</span><span class="chip ice">Next door to the bullet train + Nara line</span></div>
+    <p>The highest-rated MIMARU in the chain, literally across the street from Kyoto Station: which means our forwarded bags are waiting at check-in, the Nara train and both shinkansen rides are a two-minute walk, and a 7-Eleven (Japan's are legitimately great) is next door for the slow crew's breakfasts. Same kitchens, same bunks, same kid-spoiling staff.</p>
+    <div class="actions">
+      <a class="btn solid" href="https://www.google.com/search?tbm=isch&amp;q=MIMARU+Kyoto+Station+family+room" target="_blank" rel="noopener">&#128247; Photos</a>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=MIMARU+Kyoto+Station" target="_blank" rel="noopener">&#128506;&#65039; Map</a>
+    </div>
+  </div></div>
+
+  <div class="sec"><span class="eyebrow">The tables</span><h2 class="slab">Where we eat, by job</h2></div>
+
+  <div class="card"><div class="card-body">
+    <details open><summary>&#127860; The booked-ahead three</summary><div class="inner"><ul class="todo">
+      <li><b><span class="rank-tag">Thanksgiving feast</span>Wagyu sukiyaki in Gion, Kyoto</b><span>Two verified contenders a block apart: Chikaramaya Gion (&#9733; 4.9, 2,034) and GOKU Gion Shijo (&#9733; 5.0, 1,603). Thin-sliced wagyu in bubbling table-top pots, unlimited rice and egg, staff that reviewers rave treat families like guests of honor. We book whichever takes an eight-top first; that's Thanksgiving dinner 2026.</span> <a href="https://www.google.com/search?tbm=isch&amp;q=Chikaramaya+Gion+wagyu+sukiyaki" target="_blank" rel="noopener">Photos</a> &bull; <a href="https://www.google.com/maps/search/?api=1&amp;query=Wagyu+Sukiyaki+Chikaramaya+Gion+Kyoto" target="_blank" rel="noopener">Map</a></li>
+      <li><b><span class="rank-tag">The show with dinner</span>Asakusa Sumo Club</b><span>Live sumo bouts by retired wrestlers, a geisha dance, audience matches, and unlimited chanko nabe hotpot at your seat, hosted in English, five minutes from our Tokyo hotel. Photo with the wrestlers and a gift bag on the way out. &#9733; 4.8 (1,341), with a 4.9-rated Annex next door if the main room is booked.</span> <a href="https://www.google.com/search?tbm=isch&amp;q=Asakusa+Sumo+Club+Tokyo+show" target="_blank" rel="noopener">Photos</a> &bull; <a href="https://www.google.com/maps/search/?api=1&amp;query=Asakusa+Sumo+Club+Tokyo" target="_blank" rel="noopener">Map</a></li>
+      <li><b><span class="rank-tag">The crown jewel</span>Kaiseki night at the ryokan</b><span>Dinner's included at the Fuji stay: a dozen tiny courses, everyone in yukata robes, the mountain out the window. Zero decisions required; it comes to us.</span> <a href="https://www.google.com/search?tbm=isch&amp;q=ryokan+kaiseki+course+dinner" target="_blank" rel="noopener">Photos</a></li>
+    </ul></div></details>
+    <details><summary>&#127860; The everyday rotation</summary><div class="inner"><ul class="todo">
+      <li><b><span class="rank-tag alt">Night-one fun</span>Conveyor-belt sushi, Ueno</b><span>Plates on a track, order screens, totals counted by stacking dishes. The single best jet-lag dinner for kids ever invented; multiple big chains sit within blocks of the hotel.</span> <a href="https://www.google.com/search?tbm=isch&amp;q=kaiten+sushi+conveyor+Tokyo" target="_blank" rel="noopener">Photos</a></li>
+      <li><b><span class="rank-tag alt">The booth ramen</span>Ichiran, Shibuya</b><span>Everyone gets a private booth, orders by paper slip, and the bowl appears through a curtain. Open 24 hours, kid-fascinating, adult-delicious. &#9733; 4.4 (5,148)</span> <a href="https://www.google.com/search?tbm=isch&amp;q=Ichiran+ramen+booth" target="_blank" rel="noopener">Photos</a> &bull; <a href="https://www.google.com/maps/search/?api=1&amp;query=Ichiran+Shibuya" target="_blank" rel="noopener">Map</a></li>
+      <li><b><span class="rank-tag alt">Kyoto's food alley</span>Nishiki Market</b><span>Four hundred years old, five blocks long: skewers, taiyaki, matcha everything, mochi, pickles. The slow crew's Saturday graze. Bring cash. &#9733; 4.3 (52,817)</span> <a href="https://www.google.com/search?tbm=isch&amp;q=Nishiki+Market+Kyoto+food" target="_blank" rel="noopener">Photos</a> &bull; <a href="https://www.google.com/maps/search/?api=1&amp;query=Nishiki+Market+Kyoto" target="_blank" rel="noopener">Map</a></li>
+      <li><b><span class="rank-tag alt">The 200 yen legend</span>Nakatanidou, Nara</b><span>The mochi shop whose lightning-speed pounding show made it internet-famous; the fresh mugwort mochi with red bean is, per thousands of reviewers, the best couple hundred yen in Japan. &#9733; 4.3 (6,257)</span> <a href="https://www.google.com/search?tbm=isch&amp;q=Nakatanidou+mochi+pounding+Nara" target="_blank" rel="noopener">Photos</a> &bull; <a href="https://www.google.com/maps/search/?api=1&amp;query=Nakatanidou+Nara" target="_blank" rel="noopener">Map</a></li>
+      <li><b><span class="rank-tag alt">The secret weapon</span>Konbini breakfasts</b><span>Japan's 7-Eleven and Lawson are a genuine food experience: egg sando, onigiri, fresh melon pan, hot canned coffee. Slow-crew mornings solved for a few dollars a head, and the kids will talk about the egg sandwiches for years.</span> <a href="https://www.google.com/search?tbm=isch&amp;q=japanese+konbini+egg+sandwich+onigiri" target="_blank" rel="noopener">Photos</a></li>
+    </ul></div></details>
+    <div class="note"><b>Food math honesty:</b> Japan eats cheaper than people expect: world-class ramen runs about $8, konbini breakfasts a few bucks, and the splurges are chosen, not constant. The food line in the budget is real.</div>
+  </div></div>
+
+</section>
+
+<!-- ================= PANEL 4 ================= -->
+<section id="p-money" class="panel">
+
+  <div class="sec">
+    <span class="eyebrow">All in, Livingston to Livingston</span>
+    <h2 class="slab">The Money</h2>
+    <p class="lead">Planning estimates in US dollars for eight travelers, driveway to driveway, priced to what this plan actually does. Peak-week fares swing; these are honest centers we firm up at booking, and the flight line is the one that moves.</p>
+  </div>
+
+  <div class="card"><div class="card-body">
+    <span class="ribbon top">Japan, as planned &bull; ~$29,400 for 8 travelers</span>
+    <h3 class="slab">The breakdown</h3>
+    <ul class="todo">
+      <li><b>Flights, 8 seats: ~$12,000</b><span>Houston to Tokyo round trip on the Friday red-eye through LA, near $1,500 a seat if booked in the next few weeks; this close to a holiday week, expect quotes toward the high end and book rather than watch. Over 40 percent of the whole trip, and the one line that must be confirmed before anything else locks.</span></li>
+      <li><b>Tokyo apartments, 4 nights: ~$1,900</b><span>Two MIMARU family apartments: nights 1 to 3 (arrival, the big Tokyo day, Disney day), plus the final night after Nara. Kitchens and laundry included.</span></li>
+      <li><b>The ryokan night, all eight, dinner and breakfast included: ~$2,400</b><span>Fuji-view rooms with kaiseki dinner and onsen access. The deliberate splurge, and the night nobody forgets.</span></li>
+      <li><b>Kyoto apartments, 2 nights: ~$1,000</b><span>MIMARU Kyoto Station family apartments, across from the trains.</span></li>
+      <li><b>Trains, all of it: ~$2,200</b><span>Two shinkansen legs with reserved seats, the Fuji Excursion train, the Nara round trip, the Disney line, and city transit cards. Kids under 6 ride free; the 6 to 11 crowd rides half fare. Airport runs moved to the vans below.</span></li>
+      <li><b>Private airport vans, both directions: ~$700</b><span>Door to door with the child seat and booster installed in writing, eight bags handled, driver waiting at arrivals. The jet-lag saver.</span></li>
+      <li><b>Luggage forwarding: ~$120</b><span>Eight big bags shipped Tokyo to Kyoto so the Fuji night is daypacks only.</span></li>
+      <li><b>Food, 10 days: ~$3,500</b><span>Konbini breakfasts and cheap brilliant lunches against the booked feasts; the Thanksgiving wagyu table is in here.</span></li>
+      <li><b>Experiences: ~$2,600</b><span>teamLab Planets, the sumo dinner show (which also covers that night's dinner), the full Tokyo DisneySea day with Premier Access for the Frozen ride, ropeway and lake cruise, tea ceremony, temple entries, the night illumination, deer crackers, and arcade coins.</span></li>
+      <li><b>IAH parking, about 9 days: ~$180</b><span>We fly out Friday evening straight from the airport after school, so no Houston hotel night. Cars parked long-term.</span></li>
+      <li><b>Connectivity: ~$150</b><span>eSIMs or pocket wifi so eight people can find each other and translate menus.</span></li>
+      <li><b>Travel insurance: ~$650</b><span>Eight travelers, international, trip cost this size. Non-optional at this number.</span></li>
+      <li><b>Buffer: ~$2,000</b><span>The line that keeps every other line honest, and in Japan it converts to souvenirs nobody regrets.</span></li>
+    </ul>
+    <div class="chips"><span class="chip star">Total: ~$29,400</span><span class="chip ok">~$5,600 under the $35K ceiling</span></div>
+    <div class="note"><b>Levers, both directions:</b> to trim: a standard hotel in place of the ryokan (~$1,200 back, and I would fight you on it) or economy throughout. To upgrade, and there is room for all of it: the big guys' Premium Plus seats (~$2,600), green-car bullet train seats, or the Pok&eacute;mon family rooms if they open for our dates.</div>
+    <div class="catch"><b>&#9888;&#65039; The one swing that matters:</b> airfare. From July forward, eight Thanksgiving-week seats only climb. Book flights first, everything else holds. Second flag, smaller: the yen has been favorable to the dollar for years, and every Japan-side number above quietly benefits from it.</div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">Bottom line</h3>
+    <p>One week, three worlds plus a Frozen castle, zero school missed, and about $5,600 of air under the $35K ceiling, enough to put the big guys in Premium Plus and still land under the line. Booking order starting now: passports this week, flights plus the ryokan and hotel holds by early August, then two calendar dates: Sept 24 for Disney tickets, and one late-September afternoon for teamLab, the sumo show, and the Thanksgiving table. After that it's just waiting for November.</p>
+  </div></div>
+
+</section>
+
+<!-- ================= PANEL 5: BOOKING PLAYBOOK ================= -->
+<section id="p-book" class="panel">
+
+  <div class="sec">
+    <span class="eyebrow">For the whole crew</span>
+    <h2 class="slab">Before We Go</h2>
+    <p class="lead">Hunter is booking everything, so this tab is the family half: what to pack, what to expect with money over there, and the handful of things each household handles before we fly. Read it once now and once the week before.</p>
+  </div>
+
+  <div class="card"><div class="card-body">
+    <details><summary>&#128176; Money over there: cash, cards, and the no-tipping country</summary><div class="inner"><ul class="todo">
+      <li><b>The card truth</b><span>Cities take cards nearly everywhere now. Cash is still king at street stalls (the tanghulu run), small temple entries, some ramen shops, and the Nara mochi window. Plan on cards for big spends, cash for fun.</span></li>
+      <li><b>How much cash</b><span>Skip exchanging dollars in the US entirely. Land, then pull yen from the 7-Eleven ATM in the arrivals hall (7-Bank ATMs take US debit cards, have English menus, and beat every exchange counter's rate). Pull about 50,000 yen per family to start, roughly $350, and refill at any 7-Eleven all week. Whole-trip cash for the group lands around $1,200 to $1,500.</span></li>
+      <li><b>Before we fly</b><span>Call the banks with travel dates so cards don't freeze, and know each debit card's foreign ATM fee; a no-foreign-fee debit card in one wallet saves real money across a trip this size.</span></li>
+      <li><b>Transit money</b><span>Add a Suica card to each adult iPhone's Apple Wallet (2 minutes, reload with Apple Pay, works on every train, bus, vending machine, and konbini). Grab physical Welcome Suica cards at the airport for the kids.</span></li>
+      <li><b>Tipping: zero</b><span>Japan does not tip, anywhere, for anything; it can genuinely confuse or embarrass staff. The price is the price. Hardest habit of the trip for Texans.</span></li>
+    </ul></div></details>
+
+    <details><summary>&#129520; Packing &amp; prep (the two weeks before)</summary><div class="inner"><ul class="todo">
+      <li><b>Visit Japan Web, all 8 of us, two weeks out</b><span>Japan&#39;s official online pre-registration for immigration and customs. Hunter fills it once per traveler, everyone lands with a QR code, and the arrivals line becomes a scan instead of a form with jet-lagged littles.</span> <a href="https://www.vjw.digital.go.jp" target="_blank" rel="noopener">vjw.digital.go.jp</a></li>
+      <li><b>The meds audit</b><span>October task, full rules in While We&#39;re There: original bottles, a month or less, and the banned list checked. Daily-prescription folks flag Hunter by September.</span></li>
+      <li><b>Pack like it&#39;s a crisp Texas fall, not a ski trip</b><span>Layers for 40s to 60s, one real jacket each, hats and gloves for the Fuji night and dawn temple runs, and walking shoes broken in BEFORE the flight. This trip walks 12,000+ steps a day.</span></li>
+      <li><b>One big bag per person, one daypack each</b><span>Forwarding is priced per bag, and the Fuji night runs on daypacks only. Every daypack carries a trash bag (no public cans) and a water bottle.</span></li>
+      <li><b>Wheels for the 4 year old</b><span>A compact travel stroller that folds onto trains, or a carrier, is the difference between the Kyoto day finishing and it ending at 2pm. Disney rents strollers on site too.</span></li>
+      <li><b>Plugs: good news</b><span>Japan uses the same two-prong outlets as the US. Phone chargers work as-is; only three-prong laptop plugs need a cheap adapter.</span></li>
+      <li><b>The shared photo album</b><span>One iCloud or Google Photos shared album, all eight phones feeding it, created before wheels up. One link, every angle of the trip in one place.</span></li>
+      <li><b>The thank-you built in</b><span>This trip is a gift, so the gift goes back: the kids record one short thank-you clip at every stop (the toboggan-level moments: sumo, castle, deer), and in December the album becomes a printed photo book delivered to the grandmother who sent us. That&#39;s the plan, in writing, so it actually happens.</span></li>
+      <li><b>Souvenir envelopes</b><span>Each kid gets a set cash envelope for the trip; when it&#39;s gone it&#39;s gone. Ends every gift-shop negotiation before it starts, and Japan&#39;s gift shops are world-class ambushes.</span></li>
+      <li><b>Two booking notes so nobody learns the hard way</b><span>Ask the ryokan for the children&#39;s kaiseki option for the 4 and 6 year old (a twelve-course adult dinner versus a 4 year old is a known battle), and check Fantasy Springs ride height minimums for the littles the week Disney tickets are bought.</span></li>
+      <li><b>The home front</b><span>Both houses empty nine days over a holiday week: put names next to Maggie, the chickens, the mail, and Thanksgiving-week coverage at work before the calendar fills. Not glamorous, still the difference between relaxing over there and refreshing cameras.</span></li>
+    </ul></div></details>
+
+    </div></div>
+
+</section>
+
+<section id="p-desk" class="panel">
+
+  <div class="sec">
+    <span class="eyebrow">Hunter only &bull; the travel agent seat</span>
+    <h2 class="slab">The Planner&#39;s Desk</h2>
+    <p class="lead">Every booking, in order: where to go, what to enter, what to say, and the dates that cannot slip. Work top to bottom and check them off. The family never needs this tab.</p>
+  </div>
+
+<div class="card"><div class="card-body">
+    <h3 class="slab">The order of operations</h3>
+    <ul class="todo">
+      <li><b>This week (it is July; the trip is November)</b><span>Passport appointments for anyone missing one; kids under 16 in person with both parents. This is the tightest clock: expedite if routine timing runs past October.</span></li>
+      <li><b>Also this week</b><span>Refundable hotel holds (MIMARU both cities, the ryokan), then flights within days of each other so seats and beds lock together. Holiday-week ryokan rooms are already 4.5 months out; this is not a someday task.</span></li>
+      <li><b>By early August</b><span>Flights ticketed. This is the budget's biggest lever, and July prices beat September prices every single time.</span></li>
+      <li><b>Late September (2 months out)</b><span>teamLab tickets, Disney tickets if we add that day, sumo show seats, Kyoto Thanksgiving table.</span></li>
+      <li><b>Late October (1 month out)</b><span>Bullet train and Fuji Excursion seat reservations open. Set a phone reminder; it is a same-week task, not a someday task.</span></li>
+      <li><b>2 to 4 weeks out</b><span>Airport van transfers with child seats, eSIMs, travel insurance if not already bought with the flights.</span></li>
+    </ul>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <details open><summary>&#9992;&#65039; Step 1: Flights (the 9-seat trick)</summary><div class="inner"><ul class="todo">
+      <li><b>Where, and the routing</b><span>Out Fri Nov 20 evening IAH to Los Angeles, connect to the overnight LAX to Tokyo, home Sun Nov 29. Step zero: confirm the Friday red-eye actually prices and connects for Nov 20; if it does not, fall back to the Saturday nonstop with Disney on the holiday Monday.</span> <a href="https://www.united.com" target="_blank" rel="noopener">united.com</a></li>
+      <li><b>Book it as one ticket</b><span>All 8 on a single reservation, never two separate ones. On a connection, one ticket means the airline owns any missed connection and reroutes the whole group; two tickets means a Houston delay could strand everyone off the Tokyo leg.</span></li>
+      <li><b>Seats</b><span>Two Premium Plus window-pair seats (rows 20 to 24) for the big guys, everyone else Economy with the two 3-across blocks so each family sits together. Pick seats the moment each reservation tickets.</span></li>
+      <li><b>What it should cost</b><span>Near $1,500 a seat economy, $2,700 to $3,300 Premium Plus; book in the next few weeks, since Thanksgiving fares only climb from July on. Two Premium Plus seats for the big guys fit inside the ceiling with room to spare.</span></li>
+    </ul></div></details>
+
+    <details><summary>&#127961;&#65039; Step 2: Beds (book refundable, book early)</summary><div class="inner"><ul class="todo">
+      <li><b>MIMARU Tokyo Ueno, nights of Nov 22, 23, 24 + Nov 28</b><span>Book direct on the official site; choose 2 to 3 family apartments, request the Pok&eacute;mon room in the notes, pick the free-cancellation rate. Booking the final night now on the same reservation thread keeps the return simple.</span> <a href="https://mimaruhotels.com" target="_blank" rel="noopener">mimaruhotels.com</a> &bull; <a href="https://www.google.com/maps/search/?api=1&amp;query=MIMARU+Tokyo+Ueno+East" target="_blank" rel="noopener">Map + phone</a></li>
+      <li><b>MIMARU Kyoto Station, nights of Nov 26, 27</b><span>Same site, same play: family apartments, free-cancel rate, note that eight guests arrive by shinkansen with forwarded luggage coming from Tokyo.</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=MIMARU+Kyoto+Station" target="_blank" rel="noopener">Map + phone</a></li>
+      <li><b>The ryokan, night of Nov 25</b><span>Ubuya first choice, La Vista Fuji backup. Book on the property site or Booking.com with dinner and breakfast included for all eight; message after booking: "8 guests including children 4 and 6, private dining if available." Holiday-week ryokan rooms go 6+ months out, so this books the same week as flights.</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Ubuya+Fujikawaguchiko" target="_blank" rel="noopener">Ubuya map + phone</a> &bull; <a href="https://www.google.com/maps/search/?api=1&amp;query=La+Vista+Fuji+Kawaguchiko" target="_blank" rel="noopener">La Vista map + phone</a></li>
+    </ul></div></details>
+
+    <details><summary>&#128652; Step 3: Airport vans, door to door with car seats</summary><div class="inner"><ul class="todo">
+      <li><b>What to book</b><span>Private van transfer, airport to the Ueno hotel on Nov 22 and hotel to airport on Nov 29. For 8 people plus 8 bags expect a jumbo van plus sedan, or a small minibus; the operator sizes it from your headcount.</span></li>
+      <li><b>Where</b><span>Klook's private airport transfer listings are the easy storefront with upfront pricing and reviews; NearMe is the well-reviewed value shuttle alternative if the private quote runs high.</span> <a href="https://www.klook.com" target="_blank" rel="noopener">klook.com</a> &bull; <a href="https://www.google.com/search?q=NearMe+airport+shuttle+Tokyo" target="_blank" rel="noopener">NearMe info</a></li>
+      <li><b>Say this in the booking notes</b><span>"8 passengers, 8 large bags. Need 1 child seat (age 4) and 1 booster (age 6), please confirm in writing. Flight [number], meet at arrivals."</span></li>
+      <li><b>Cost</b><span>Roughly $250 to $400 each way. Book 2 to 4 weeks out.</span></li>
+    </ul></div></details>
+
+    <details><summary>&#127915; Step 4: The sellout tickets (late September, calendar it)</summary><div class="inner"><ul class="todo">
+      <li><b>teamLab Planets</b><span>Official site only, tickets release about 2 months ahead. Buy 8 for Mon Nov 23, aim for a 2:30 to 4pm entry.</span> <a href="https://www.teamlab.art" target="_blank" rel="noopener">teamlab.art</a></li>
+      <li><b>Asakusa Sumo Club, Mon Nov 23 evening</b><span>Book on their site or Klook; 8 seats, front tiers if open. Verified phone if you want a human: +81 3-5246-3344. Ask for the show with the all-you-can-eat chanko nabe included and flag the kids' ages; they seat families well.</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Asakusa+Sumo+Club+Tokyo" target="_blank" rel="noopener">Map + booking links</a></li>
+      <li><b>Thanksgiving wagyu table, Thu Nov 26, 6:30pm, party of 8</b><span>Chikaramaya Gion first, GOKU Gion backup; both take online reservations (TableCheck-style widgets on their pages) about a month out. Book whichever confirms 8 first.</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Wagyu+Sukiyaki+Chikaramaya+Gion+Kyoto" target="_blank" rel="noopener">Chikaramaya map</a> &bull; <a href="https://www.google.com/maps/search/?api=1&amp;query=GOKU+Gion+Shijo+Kyoto" target="_blank" rel="noopener">GOKU map</a></li>
+      <li><b>Kyoto night illumination, Fri Nov 27</b><span>Temple light-up schedules publish in early fall; most are walk-up tickets at the gate, a few sell timed entry online. Check the official Kyoto tourism calendar when it posts and slot the strongest one near our hotel.</span> <a href="https://www.google.com/search?q=Kyoto+autumn+illumination+schedule+2026" target="_blank" rel="noopener">Check the schedule</a></li>
+      <li><b>Disney Fantasy Springs day, Tue Nov 24 (locked)</b><span>Tokyo DisneySea tickets sell exactly 2 months out on the official Tokyo Disney Resort app: calendar Sept 24 and buy all 8 park tickets that morning, plus Premier Access for the Frozen boat ride once inside. A weekday visit dodges weekend and holiday crowds. Entry rules keep shifting (standby has opened up), so read the current rules that day.</span> <a href="https://www.tokyodisneyresort.jp/en/" target="_blank" rel="noopener">tokyodisneyresort.jp/en</a></li>
+    </ul></div></details>
+
+    <details><summary>&#128645; Step 5: Trains (one month out, to the day)</summary><div class="inner"><ul class="todo">
+      <li><b>The two bullet trains</b><span>Book on the SmartEX app or site: Mishima to Kyoto midday Thu Nov 26, Kyoto to Tokyo late afternoon Sat Nov 28. Reserve 7 seats (the under-6 rides free on a lap, or add an eighth cheap child ticket for comfort), and pick the Fuji-side windows, E seats on the right heading west, left heading east. Reservations open one month before each ride.</span> <a href="https://smart-ex.jp/en/" target="_blank" rel="noopener">smart-ex.jp</a></li>
+      <li><b>The Fuji Excursion, Wed Nov 25 morning</b><span>Direct limited express, Shinjuku to Kawaguchiko, about 2 hours. Reserve seats on JR East's Ekinet a month out; this train sells out on holiday weeks.</span> <a href="https://www.eki-net.com/en/jreast-train-reservation/Top/Index" target="_blank" rel="noopener">eki-net.com</a></li>
+      <li><b>Everything else</b><span>City subways, the Nara line, and airport backups need no advance booking; the transit cards below cover them.</span></li>
+    </ul></div></details>
+
+    <details><summary>&#128225; Step 7: Phones, luggage, insurance</summary><div class="inner"><ul class="todo">
+      <li><b>eSIMs, 2 weeks out</b><span>Airalo or Ubigi, a Japan data plan per adult phone, $10 to $15 each, installed before we fly and switched on at landing. Teens included so the group chat never dies.</span> <a href="https://www.airalo.com" target="_blank" rel="noopener">airalo.com</a></li>
+      <li><b>Luggage forwarding, booked at the front desk</b><span>Nothing to arrange in advance: Wednesday morning, hand the big bags to the MIMARU Ueno front desk and say "takkyubin to MIMARU Kyoto Station for tomorrow." About $15 a bag, they handle everything, bags are waiting at Kyoto check-in.</span></li>
+      <li><b>Travel insurance, within 3 weeks of the first payment</b><span>A family policy covering trip cost, medical, and delays for 8 international travelers runs near the $700 in the budget; buying within 2 to 3 weeks of the first trip payment keeps the best coverage options open. Compare on a marketplace and pick a primary-medical plan, and once bought, write the policy number onto the emergency card in While We&#39;re There. Bonus: the refundable-rate hotels and forward-cancelable tickets mean most of the budget stays recoverable until about 60 days out; flights are the main locked money.</span> <a href="https://www.insuremytrip.com" target="_blank" rel="noopener">insuremytrip.com</a></li>
+    </ul></div></details>
+
+
+    <div class="note"><b>How to use this tab:</b> top to bottom, checking boxes. The only two phone calls in the whole plan are linking the flight reservations and, if you want a human, the sumo club. Everything else is a link on this page.</div>
+    <div class="catch"><b>&#9888;&#65039; The one thing I can't be:</b> the 2am fixer if a flight cancels mid-trip. That job belongs to the travel insurance line and United's app rebooking, which is exactly why both are in this playbook. Everything up to that moment is on this page.</div>
+  </div></div>
+
+</section>
+
+
+<section id="p-there" class="panel">
+
+  <div class="sec">
+    <span class="eyebrow">Everyone screenshots this tab</span>
+    <h2 class="slab">While We&#39;re There</h2>
+    <p class="lead">The in-country half of the playbook: emergencies, the medicine law nobody knows about, how not to stick out, and the ten phrases that carry the whole week. Add this page to your phone&#39;s home screen before we fly.</p>
+  </div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">&#128657; The emergency card (screenshot this one card)</h3>
+    <ul class="todo">
+      <li><b>Police: dial 110 &bull; Ambulance or fire: dial 119</b><span>English operators are available; say the city first (Tokyo or Kyoto), then the problem.</span></li>
+      <li><b>US Embassy Tokyo</b><span>1-10-5 Akasaka, Minato-ku, Tokyo. Phone +81 3-3224-5000. Lost passport, arrest, real trouble: this is the number.</span></li>
+      <li><b>Travel insurance policy number: ______________</b><span>Hunter writes it here the day the policy is bought, and everyone re-screenshots.</span></li>
+      <li><b>Show-the-driver hotel cards</b><span>Tokyo: MIMARU&#26481;&#20140; &#19978;&#37326; (Ueno). Kyoto: MIMARU&#20140;&#37117; STATION (across from Kyoto Station). Fuji: &#12358;&#12406;&#12420; Ubuya, Kawaguchiko. Showing the Japanese name to any taxi driver or shopkeeper gets you home; each family should also screenshot the hotel&#39;s Google Maps pin from the Stay tab.</span></li>
+      <li><b>If anyone gets separated</b><span>The rule for kids: STOP where you are, stand still, we come to you. Adults: go to the last together-point or the hotel lobby, whichever is closer, and post in the group chat. Nobody wanders looking for anybody.</span></li>
+      <li><b>The littles&#39; layer</b><span>AirTag in each kid&#39;s coat pocket, and a wristband or card in their pocket with a parent&#39;s phone number, worn every day, non-negotiable on Disney day.</span></li>
+    </ul>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">&#128138; The medicine law that catches Americans</h3>
+    <div class="catch"><b>&#9888;&#65039; Do the meds audit in October, not at the airport:</b> Japan bans some everyday US medications. Sudafed and anything with pseudoephedrine is illegal to bring in, period. ADHD stimulants like Adderall are prohibited without advance government permission (a Yakkan Shoumei certificate, applied for weeks ahead). Some codeine products are restricted.</div>
+    <ul class="todo">
+      <li><b>The safe pattern</b><span>Everything in original labeled bottles, no more than a month&#39;s supply, prescriptions photographed, and anything questionable checked against Japan&#39;s health ministry guidance in October. Tylenol, Advil, Benadryl, and kids&#39; fever meds are all fine.</span></li>
+      <li><b>If anyone in the crew takes a daily prescription</b><span>Flag it to Hunter by September so there&#39;s time to file for permission if it needs one. This is the single least-known trip-ruiner in Japan travel.</span></li>
+    </ul>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <details open><summary>&#127809; How not to stick out: the etiquette quicksheet</summary><div class="inner"><ul class="todo">
+      <li><b>Shoes off where the floor changes</b><span>Ryokan, temples, some restaurants: if there&#39;s a step up and slippers waiting, shoes come off. Wear socks you like.</span></li>
+      <li><b>Trains are library-quiet</b><span>Phones on silent, conversations low, no calls. The littles get the whisper game.</span></li>
+      <li><b>Nobody eats while walking</b><span>Buy the tanghulu, stand by the stall, finish it, then walk. It&#39;s the custom everywhere.</span></li>
+      <li><b>There are no public trash cans</b><span>Genuinely almost none. Every daypack carries a plastic bag; trash rides home to the apartment.</span></li>
+      <li><b>Escalators: stand left in Tokyo</b><span>(Kyoto and Osaka flip it; watch the locals.) Walkers pass on the other side.</span></li>
+      <li><b>Onsen rules at the ryokan</b><span>Wash and rinse completely at the seated showers BEFORE entering the bath, swimsuits are a no in traditional baths, hair up and towels stay out of the water. If anyone has visible tattoos, say so at booking: it&#39;s exactly why La Vista&#39;s private reservable baths are our alternate.</span></li>
+      <li><b>No tipping, anywhere, ever</b><span>Covered in the money tab, worth repeating: it can genuinely confuse or embarrass staff. A smile and arigatou gozaimasu is the tip.</span></li>
+    </ul></div></details>
+
+    <details><summary>&#128483;&#65039; Ten phrases that carry the week</summary><div class="inner"><ul class="todo">
+      <li><b>Konnichiwa</b><span>Hello.</span></li>
+      <li><b>Arigatou gozaimasu</b><span>Thank you (the polite full version; use it constantly).</span></li>
+      <li><b>Sumimasen</b><span>Excuse me / sorry / getting a waiter&#39;s attention. The most useful word in Japan.</span></li>
+      <li><b>Eigo o hanasemasu ka?</b><span>Do you speak English?</span></li>
+      <li><b>Kore o kudasai</b><span>This one, please (point at anything).</span></li>
+      <li><b>Ikura desu ka?</b><span>How much is it?</span></li>
+      <li><b>Toire wa doko desu ka?</b><span>Where is the bathroom?</span></li>
+      <li><b>Oishii!</b><span>Delicious! (Say it at the sumo hotpot and watch faces light up.)</span></li>
+      <li><b>Daijoubu</b><span>It&#39;s okay / I&#39;m fine / no thanks.</span></li>
+      <li><b>Kanpai!</b><span>Cheers. Thanksgiving dinner requires it.</span></li>
+    </ul><p style="font-size:13px;color:var(--ink2);margin-top:6px">Google Translate&#39;s camera mode reads menus and signs live; everyone installs it and downloads Japanese for offline before we fly.</p></div></details>
+
+    <details><summary>&#128241; Keep this guide working offline</summary><div class="inner"><ul class="todo">
+      <li><b>Add this page to your home screen</b><span>iPhone: share button, Add to Home Screen. It opens like an app and keeps working through spotty signal.</span></li>
+      <li><b>Screenshot the emergency card above</b><span>Photos work with zero signal. Every adult and both teens carry it.</span></li>
+      <li><b>Offline maps</b><span>In Google Maps, download offline areas for Tokyo, Kawaguchiko, and Kyoto before the flight.</span></li>
+    </ul></div></details>
+  </div></div>
+
+
+  <div class="card"><div class="card-body">
+<details><summary>&#128644; Getting between the three hotels (the transfer days)</summary><div class="inner">
+      <p style="font-size:14px;color:var(--ink2);margin:2px 0 8px">Nothing here needs a separate booking. The two hotel-to-hotel moves ARE the two bullet-train rides already in the plan, and forwarded luggage carries two of the three. Door to door:</p>
+      <ul class="todo">
+      <li><b>Tokyo apartment &rarr; Fuji ryokan (Wed Nov 25)</b><span>Daypacks only. Morning of, hand the big bags to the MIMARU Ueno front desk to forward straight to Kyoto (they skip Fuji entirely). Short subway hop to Shinjuku, board the reserved Fuji Excursion train (about 2 hours), and the ryokan's own free shuttle meets you at Kawaguchiko Station. No heavy lifting anywhere.</span></li>
+      <li><b>Fuji ryokan &rarr; Kyoto apartment (Thu Nov 26)</b><span>Ryokan shuttle back to the station, bullet train to Kyoto, and MIMARU Kyoto Station is directly across from the platforms: a two-minute roll to the front desk where the forwarded bags are already waiting. Best-placed hotel of the trip, on purpose.</span></li>
+      <li><b>Kyoto apartment &rarr; final Tokyo night (Sat Nov 28)</b><span>The one day we travel with our own bags, since forwarding can't arrive same-night. Easy version: check out of the hotel across from the station, roll bags two minutes to the platform, sunset shinkansen to Tokyo, then a direct train to Ueno. It's the last night, so bags in tow barely matters.</span></li>
+      <li><b>Inside each city, all week</b><span>Everything is a walk or a tap-on subway ride with a Suica card in your phone (Step 6). The apartments were picked to sit inside the walkable core of each city, so hotel-to-shops is never a booking, never a taxi you have to plan.</span></li>
+      </ul>
+      <div class="note"><b>The only ground transport you pre-book</b> is the two airport vans in Step 3. Everything between hotels is trains you're already reserving plus the free ryokan shuttle; everything inside a city is Suica taps. Luggage forwarding is arranged at the front desk the morning you need it, about $15 a bag, no reservation.</div>
+    </div></details>
+
+    </div></div>
+
+</section>
+
+<section id="p-info" class="panel">
+
+  <div class="sec">
+    <span class="eyebrow">For the trip planner</span>
+    <h2 class="slab">Family Info</h2>
+    <p class="lead">Hunter is booking everything, so he needs each traveler's details exactly as they appear on official documents. Find your name, tap it open, fill your fields, then tap the copy button and send it to Hunter in a text or email. Two minutes and you are done.</p>
+  </div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">How this works, and one thing to know</h3>
+    <ul class="todo">
+      <li><b>Fill your own card, then copy and send</b><span>Open your name below, type your info, tap "Copy my info," and paste it into a text or email straight to Hunter. That is the only way your details leave your phone.</span></li>
+      <li><b>&#128274; Nothing is saved or posted here</b><span>This page does not store or send anything on its own; your info exists only on your screen until you copy it and send it privately to Hunter. So send it by text or email, never by posting it anywhere public.</span></li>
+      <li><b>&#128683; No Social Security numbers, on purpose</b><span>Booking flights and hotels never requires an SSN. The only sensitive number needed is your passport number, sent privately to Hunter. Anyone asking for an SSN to book a normal flight is a red flag, which is why there is no SSN field here.</span></li>
+      <li><b>&#9888;&#65039; Check your passport TODAY</b><span>It must be valid through at least June 2027 (six months past our travel). If it expires before then, you have to renew now, so mark "need to renew" and tell Hunter. This is the tightest deadline of the whole trip.</span></li>
+    </ul>
+  </div></div>
+
+  <div class="sec"><span class="eyebrow">Family one</span><h2 class="slab">The Thomas family</h2></div>
+  <details class="person" data-name="Hannah Thomas"><summary>Hannah Thomas</summary><div class="inner">
+  <p class="reqnote">Fields marked <span class="req">req</span> are the must-haves to book your flight. The rest smooth things out or are for the group dinners. Two minutes, then hit copy.</p>
+  <div class="fldrow">
+    <div class="fld"><label>Legal first name <span class="req">req</span><br><span class="hint">exactly as printed on your passport</span></label><input type="text" data-label="First name" data-required="1" placeholder="First"></div>
+    <div class="fld"><label>Legal middle name <span class="optn">or type none</span></label><input type="text" data-label="Middle name" placeholder="Middle"></div>
+    <div class="fld"><label>Legal last name <span class="req">req</span></label><input type="text" data-label="Last name" data-required="1" placeholder="Last"></div>
+  </div>
+  <div class="fld"><label>Date of birth <span class="req">req</span></label><input type="text" data-label="Date of birth" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Sex as shown on passport <span class="req">req</span></label><select data-label="Sex on passport" data-required="1"><option value="">Select</option><option>F</option><option>M</option><option>X</option></select></div>
+  <div class="fld"><label>Passport number <span class="req">req</span></label><input type="text" data-label="Passport number" data-required="1" placeholder="Passport #"></div>
+  <div class="fld"><label>Passport expiration date <span class="req">req</span></label><input type="text" data-label="Passport expires" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Is your passport valid through at least June 2027? <span class="req">req</span></label><select data-label="Passport valid past June 2027" data-required="1"><option value="">Select</option><option>Yes, valid</option><option>No, need to renew now</option><option>Not sure, will check this week</option></select></div>
+  <div class="fldrow">
+    <div class="fld"><label>Passport issuing country <span class="req">req</span></label><input type="text" data-label="Passport country" data-required="1" value="United States"></div>
+    <div class="fld"><label>Citizenship <span class="req">req</span></label><input type="text" data-label="Citizenship" data-required="1" value="United States"></div>
+  </div>
+  <div class="fld"><label>Mobile phone <span class="optn">for airline contact</span></label><input type="text" data-label="Mobile" placeholder="Phone"></div>
+  <div class="fld"><label>Email <span class="optn">for confirmations</span></label><input type="text" data-label="Email" placeholder="Email"></div>
+  <div class="fld"><label>Known Traveler Number <span class="optn">TSA PreCheck or Global Entry, optional</span></label><input type="text" data-label="Known Traveler Number" placeholder="KTN if you have one"></div>
+  <div class="fld"><label>United MileagePlus number <span class="optn">optional, to earn miles</span></label><input type="text" data-label="MileagePlus number" placeholder="Frequent flyer #"></div>
+  <div class="fld"><label>Redress number <span class="optn">optional, only if you have one</span></label><input type="text" data-label="Redress number" placeholder="Redress # if any"></div>
+  <div class="fld"><label>Seat preference</label><select data-label="Seat preference"><option value="">Select</option><option>Window</option><option>Aisle</option><option>No preference</option><option>Need extra room, see notes</option></select></div>
+  <div class="fld"><label>Food allergies or dietary needs <span class="optn">for flights and the group dinners</span></label><input type="text" data-label="Dietary / allergies" placeholder="none, vegetarian, nut allergy, etc."></div>
+  <div class="fld"><label>Anything else I should know <span class="optn">medical, mobility, anything</span></label><textarea data-label="Notes" rows="2" placeholder="Optional"></textarea></div>
+  <button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Hannah's info</button>
+  <span class="copied">Copied. Now paste it in a text or email to Hunter.</span>
+</div></details>
+  <details class="person" data-name="Stacey Thomas"><summary>Stacey Thomas</summary><div class="inner">
+  <p class="reqnote">Fields marked <span class="req">req</span> are the must-haves to book your flight. The rest smooth things out or are for the group dinners. Two minutes, then hit copy.</p>
+  <div class="fldrow">
+    <div class="fld"><label>Legal first name <span class="req">req</span><br><span class="hint">exactly as printed on your passport</span></label><input type="text" data-label="First name" data-required="1" placeholder="First"></div>
+    <div class="fld"><label>Legal middle name <span class="optn">or type none</span></label><input type="text" data-label="Middle name" placeholder="Middle"></div>
+    <div class="fld"><label>Legal last name <span class="req">req</span></label><input type="text" data-label="Last name" data-required="1" placeholder="Last"></div>
+  </div>
+  <div class="fld"><label>Date of birth <span class="req">req</span></label><input type="text" data-label="Date of birth" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Sex as shown on passport <span class="req">req</span></label><select data-label="Sex on passport" data-required="1"><option value="">Select</option><option>F</option><option>M</option><option>X</option></select></div>
+  <div class="fld"><label>Passport number <span class="req">req</span></label><input type="text" data-label="Passport number" data-required="1" placeholder="Passport #"></div>
+  <div class="fld"><label>Passport expiration date <span class="req">req</span></label><input type="text" data-label="Passport expires" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Is your passport valid through at least June 2027? <span class="req">req</span></label><select data-label="Passport valid past June 2027" data-required="1"><option value="">Select</option><option>Yes, valid</option><option>No, need to renew now</option><option>Not sure, will check this week</option></select></div>
+  <div class="fldrow">
+    <div class="fld"><label>Passport issuing country <span class="req">req</span></label><input type="text" data-label="Passport country" data-required="1" value="United States"></div>
+    <div class="fld"><label>Citizenship <span class="req">req</span></label><input type="text" data-label="Citizenship" data-required="1" value="United States"></div>
+  </div>
+  <div class="fld"><label>Mobile phone <span class="optn">for airline contact</span></label><input type="text" data-label="Mobile" placeholder="Phone"></div>
+  <div class="fld"><label>Email <span class="optn">for confirmations</span></label><input type="text" data-label="Email" placeholder="Email"></div>
+  <div class="fld"><label>Known Traveler Number <span class="optn">TSA PreCheck or Global Entry, optional</span></label><input type="text" data-label="Known Traveler Number" placeholder="KTN if you have one"></div>
+  <div class="fld"><label>United MileagePlus number <span class="optn">optional, to earn miles</span></label><input type="text" data-label="MileagePlus number" placeholder="Frequent flyer #"></div>
+  <div class="fld"><label>Redress number <span class="optn">optional, only if you have one</span></label><input type="text" data-label="Redress number" placeholder="Redress # if any"></div>
+  <div class="fld"><label>Seat preference</label><select data-label="Seat preference"><option value="">Select</option><option>Window</option><option>Aisle</option><option>No preference</option><option>Need extra room, see notes</option></select></div>
+  <div class="fld"><label>Food allergies or dietary needs <span class="optn">for flights and the group dinners</span></label><input type="text" data-label="Dietary / allergies" placeholder="none, vegetarian, nut allergy, etc."></div>
+  <div class="fld"><label>Anything else I should know <span class="optn">medical, mobility, anything</span></label><textarea data-label="Notes" rows="2" placeholder="Optional"></textarea></div>
+  <button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Stacey's info</button>
+  <span class="copied">Copied. Now paste it in a text or email to Hunter.</span>
+</div></details>
+  <details class="person" data-name="Ty Thomas"><summary>Ty Thomas</summary><div class="inner">
+  <p class="reqnote">Fields marked <span class="req">req</span> are the must-haves to book your flight. The rest smooth things out or are for the group dinners. Two minutes, then hit copy.</p>
+  <div class="fldrow">
+    <div class="fld"><label>Legal first name <span class="req">req</span><br><span class="hint">exactly as printed on your passport</span></label><input type="text" data-label="First name" data-required="1" placeholder="First"></div>
+    <div class="fld"><label>Legal middle name <span class="optn">or type none</span></label><input type="text" data-label="Middle name" placeholder="Middle"></div>
+    <div class="fld"><label>Legal last name <span class="req">req</span></label><input type="text" data-label="Last name" data-required="1" placeholder="Last"></div>
+  </div>
+  <div class="fld"><label>Date of birth <span class="req">req</span></label><input type="text" data-label="Date of birth" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Sex as shown on passport <span class="req">req</span></label><select data-label="Sex on passport" data-required="1"><option value="">Select</option><option>F</option><option>M</option><option>X</option></select></div>
+  <div class="fld"><label>Passport number <span class="req">req</span></label><input type="text" data-label="Passport number" data-required="1" placeholder="Passport #"></div>
+  <div class="fld"><label>Passport expiration date <span class="req">req</span></label><input type="text" data-label="Passport expires" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Is your passport valid through at least June 2027? <span class="req">req</span></label><select data-label="Passport valid past June 2027" data-required="1"><option value="">Select</option><option>Yes, valid</option><option>No, need to renew now</option><option>Not sure, will check this week</option></select></div>
+  <div class="fldrow">
+    <div class="fld"><label>Passport issuing country <span class="req">req</span></label><input type="text" data-label="Passport country" data-required="1" value="United States"></div>
+    <div class="fld"><label>Citizenship <span class="req">req</span></label><input type="text" data-label="Citizenship" data-required="1" value="United States"></div>
+  </div>
+  <div class="fld"><label>Mobile phone <span class="optn">for airline contact</span></label><input type="text" data-label="Mobile" placeholder="Phone"></div>
+  <div class="fld"><label>Email <span class="optn">for confirmations</span></label><input type="text" data-label="Email" placeholder="Email"></div>
+  <div class="fld"><label>Known Traveler Number <span class="optn">TSA PreCheck or Global Entry, optional</span></label><input type="text" data-label="Known Traveler Number" placeholder="KTN if you have one"></div>
+  <div class="fld"><label>United MileagePlus number <span class="optn">optional, to earn miles</span></label><input type="text" data-label="MileagePlus number" placeholder="Frequent flyer #"></div>
+  <div class="fld"><label>Redress number <span class="optn">optional, only if you have one</span></label><input type="text" data-label="Redress number" placeholder="Redress # if any"></div>
+  <div class="fld"><label>Seat preference</label><select data-label="Seat preference"><option value="">Select</option><option>Window</option><option>Aisle</option><option>No preference</option><option>Need extra room, see notes</option></select></div>
+  <div class="fld"><label>Food allergies or dietary needs <span class="optn">for flights and the group dinners</span></label><input type="text" data-label="Dietary / allergies" placeholder="none, vegetarian, nut allergy, etc."></div>
+  <div class="fld"><label>Anything else I should know <span class="optn">medical, mobility, anything</span></label><textarea data-label="Notes" rows="2" placeholder="Optional"></textarea></div>
+  <button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Ty's info</button>
+  <span class="copied">Copied. Now paste it in a text or email to Hunter.</span>
+</div></details>
+  <details class="person" data-name="Tenley Thomas"><summary>Tenley Thomas</summary><div class="inner">
+  <p class="reqnote">Fields marked <span class="req">req</span> are the must-haves to book your flight. The rest smooth things out or are for the group dinners. Two minutes, then hit copy.</p>
+  <div class="fldrow">
+    <div class="fld"><label>Legal first name <span class="req">req</span><br><span class="hint">exactly as printed on your passport</span></label><input type="text" data-label="First name" data-required="1" placeholder="First"></div>
+    <div class="fld"><label>Legal middle name <span class="optn">or type none</span></label><input type="text" data-label="Middle name" placeholder="Middle"></div>
+    <div class="fld"><label>Legal last name <span class="req">req</span></label><input type="text" data-label="Last name" data-required="1" placeholder="Last"></div>
+  </div>
+  <div class="fld"><label>Date of birth <span class="req">req</span></label><input type="text" data-label="Date of birth" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Sex as shown on passport <span class="req">req</span></label><select data-label="Sex on passport" data-required="1"><option value="">Select</option><option>F</option><option>M</option><option>X</option></select></div>
+  <div class="fld"><label>Passport number <span class="req">req</span></label><input type="text" data-label="Passport number" data-required="1" placeholder="Passport #"></div>
+  <div class="fld"><label>Passport expiration date <span class="req">req</span></label><input type="text" data-label="Passport expires" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Is your passport valid through at least June 2027? <span class="req">req</span></label><select data-label="Passport valid past June 2027" data-required="1"><option value="">Select</option><option>Yes, valid</option><option>No, need to renew now</option><option>Not sure, will check this week</option></select></div>
+  <div class="fldrow">
+    <div class="fld"><label>Passport issuing country <span class="req">req</span></label><input type="text" data-label="Passport country" data-required="1" value="United States"></div>
+    <div class="fld"><label>Citizenship <span class="req">req</span></label><input type="text" data-label="Citizenship" data-required="1" value="United States"></div>
+  </div>
+  <div class="fld"><label>Mobile phone <span class="optn">for airline contact</span></label><input type="text" data-label="Mobile" placeholder="Phone"></div>
+  <div class="fld"><label>Email <span class="optn">for confirmations</span></label><input type="text" data-label="Email" placeholder="Email"></div>
+  <div class="fld"><label>Known Traveler Number <span class="optn">TSA PreCheck or Global Entry, optional</span></label><input type="text" data-label="Known Traveler Number" placeholder="KTN if you have one"></div>
+  <div class="fld"><label>United MileagePlus number <span class="optn">optional, to earn miles</span></label><input type="text" data-label="MileagePlus number" placeholder="Frequent flyer #"></div>
+  <div class="fld"><label>Redress number <span class="optn">optional, only if you have one</span></label><input type="text" data-label="Redress number" placeholder="Redress # if any"></div>
+  <div class="fld"><label>Seat preference</label><select data-label="Seat preference"><option value="">Select</option><option>Window</option><option>Aisle</option><option>No preference</option><option>Need extra room, see notes</option></select></div>
+  <div class="fld"><label>Food allergies or dietary needs <span class="optn">for flights and the group dinners</span></label><input type="text" data-label="Dietary / allergies" placeholder="none, vegetarian, nut allergy, etc."></div>
+  <div class="fld"><label>Anything else I should know <span class="optn">medical, mobility, anything</span></label><textarea data-label="Notes" rows="2" placeholder="Optional"></textarea></div>
+  <button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Tenley's info</button>
+  <span class="copied">Copied. Now paste it in a text or email to Hunter.</span>
+</div></details>
+
+  <div class="sec"><span class="eyebrow">Family two</span><h2 class="slab">The Haley family</h2></div>
+  <details class="person" data-name="Brittany Haley"><summary>Brittany Haley</summary><div class="inner">
+  <p class="reqnote">Fields marked <span class="req">req</span> are the must-haves to book your flight. The rest smooth things out or are for the group dinners. Two minutes, then hit copy.</p>
+  <div class="fldrow">
+    <div class="fld"><label>Legal first name <span class="req">req</span><br><span class="hint">exactly as printed on your passport</span></label><input type="text" data-label="First name" data-required="1" placeholder="First"></div>
+    <div class="fld"><label>Legal middle name <span class="optn">or type none</span></label><input type="text" data-label="Middle name" placeholder="Middle"></div>
+    <div class="fld"><label>Legal last name <span class="req">req</span></label><input type="text" data-label="Last name" data-required="1" placeholder="Last"></div>
+  </div>
+  <div class="fld"><label>Date of birth <span class="req">req</span></label><input type="text" data-label="Date of birth" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Sex as shown on passport <span class="req">req</span></label><select data-label="Sex on passport" data-required="1"><option value="">Select</option><option>F</option><option>M</option><option>X</option></select></div>
+  <div class="fld"><label>Passport number <span class="req">req</span></label><input type="text" data-label="Passport number" data-required="1" placeholder="Passport #"></div>
+  <div class="fld"><label>Passport expiration date <span class="req">req</span></label><input type="text" data-label="Passport expires" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Is your passport valid through at least June 2027? <span class="req">req</span></label><select data-label="Passport valid past June 2027" data-required="1"><option value="">Select</option><option>Yes, valid</option><option>No, need to renew now</option><option>Not sure, will check this week</option></select></div>
+  <div class="fldrow">
+    <div class="fld"><label>Passport issuing country <span class="req">req</span></label><input type="text" data-label="Passport country" data-required="1" value="United States"></div>
+    <div class="fld"><label>Citizenship <span class="req">req</span></label><input type="text" data-label="Citizenship" data-required="1" value="United States"></div>
+  </div>
+  <div class="fld"><label>Mobile phone <span class="optn">for airline contact</span></label><input type="text" data-label="Mobile" placeholder="Phone"></div>
+  <div class="fld"><label>Email <span class="optn">for confirmations</span></label><input type="text" data-label="Email" placeholder="Email"></div>
+  <div class="fld"><label>Known Traveler Number <span class="optn">TSA PreCheck or Global Entry, optional</span></label><input type="text" data-label="Known Traveler Number" placeholder="KTN if you have one"></div>
+  <div class="fld"><label>United MileagePlus number <span class="optn">optional, to earn miles</span></label><input type="text" data-label="MileagePlus number" placeholder="Frequent flyer #"></div>
+  <div class="fld"><label>Redress number <span class="optn">optional, only if you have one</span></label><input type="text" data-label="Redress number" placeholder="Redress # if any"></div>
+  <div class="fld"><label>Seat preference</label><select data-label="Seat preference"><option value="">Select</option><option>Window</option><option>Aisle</option><option>No preference</option><option>Need extra room, see notes</option></select></div>
+  <div class="fld"><label>Food allergies or dietary needs <span class="optn">for flights and the group dinners</span></label><input type="text" data-label="Dietary / allergies" placeholder="none, vegetarian, nut allergy, etc."></div>
+  <div class="fld"><label>Anything else I should know <span class="optn">medical, mobility, anything</span></label><textarea data-label="Notes" rows="2" placeholder="Optional"></textarea></div>
+  <button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Brittany's info</button>
+  <span class="copied">Copied. Now paste it in a text or email to Hunter.</span>
+</div></details>
+  <details class="person" data-name="Hunter Haley"><summary>Hunter Haley</summary><div class="inner">
+  <p class="reqnote">Fields marked <span class="req">req</span> are the must-haves to book your flight. The rest smooth things out or are for the group dinners. Two minutes, then hit copy.</p>
+  <div class="fldrow">
+    <div class="fld"><label>Legal first name <span class="req">req</span><br><span class="hint">exactly as printed on your passport</span></label><input type="text" data-label="First name" data-required="1" placeholder="First"></div>
+    <div class="fld"><label>Legal middle name <span class="optn">or type none</span></label><input type="text" data-label="Middle name" placeholder="Middle"></div>
+    <div class="fld"><label>Legal last name <span class="req">req</span></label><input type="text" data-label="Last name" data-required="1" placeholder="Last"></div>
+  </div>
+  <div class="fld"><label>Date of birth <span class="req">req</span></label><input type="text" data-label="Date of birth" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Sex as shown on passport <span class="req">req</span></label><select data-label="Sex on passport" data-required="1"><option value="">Select</option><option>F</option><option>M</option><option>X</option></select></div>
+  <div class="fld"><label>Passport number <span class="req">req</span></label><input type="text" data-label="Passport number" data-required="1" placeholder="Passport #"></div>
+  <div class="fld"><label>Passport expiration date <span class="req">req</span></label><input type="text" data-label="Passport expires" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Is your passport valid through at least June 2027? <span class="req">req</span></label><select data-label="Passport valid past June 2027" data-required="1"><option value="">Select</option><option>Yes, valid</option><option>No, need to renew now</option><option>Not sure, will check this week</option></select></div>
+  <div class="fldrow">
+    <div class="fld"><label>Passport issuing country <span class="req">req</span></label><input type="text" data-label="Passport country" data-required="1" value="United States"></div>
+    <div class="fld"><label>Citizenship <span class="req">req</span></label><input type="text" data-label="Citizenship" data-required="1" value="United States"></div>
+  </div>
+  <div class="fld"><label>Mobile phone <span class="optn">for airline contact</span></label><input type="text" data-label="Mobile" placeholder="Phone"></div>
+  <div class="fld"><label>Email <span class="optn">for confirmations</span></label><input type="text" data-label="Email" placeholder="Email"></div>
+  <div class="fld"><label>Known Traveler Number <span class="optn">TSA PreCheck or Global Entry, optional</span></label><input type="text" data-label="Known Traveler Number" placeholder="KTN if you have one"></div>
+  <div class="fld"><label>United MileagePlus number <span class="optn">optional, to earn miles</span></label><input type="text" data-label="MileagePlus number" placeholder="Frequent flyer #"></div>
+  <div class="fld"><label>Redress number <span class="optn">optional, only if you have one</span></label><input type="text" data-label="Redress number" placeholder="Redress # if any"></div>
+  <div class="fld"><label>Seat preference</label><select data-label="Seat preference"><option value="">Select</option><option>Window</option><option>Aisle</option><option>No preference</option><option>Need extra room, see notes</option></select></div>
+  <div class="fld"><label>Food allergies or dietary needs <span class="optn">for flights and the group dinners</span></label><input type="text" data-label="Dietary / allergies" placeholder="none, vegetarian, nut allergy, etc."></div>
+  <div class="fld"><label>Anything else I should know <span class="optn">medical, mobility, anything</span></label><textarea data-label="Notes" rows="2" placeholder="Optional"></textarea></div>
+  <button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Hunter's info</button>
+  <span class="copied">Copied. Now paste it in a text or email to Hunter.</span>
+</div></details>
+  <details class="person" data-name="Avery Haley"><summary>Avery Haley</summary><div class="inner">
+  <p class="reqnote">Fields marked <span class="req">req</span> are the must-haves to book your flight. The rest smooth things out or are for the group dinners. Two minutes, then hit copy.</p>
+  <div class="fldrow">
+    <div class="fld"><label>Legal first name <span class="req">req</span><br><span class="hint">exactly as printed on your passport</span></label><input type="text" data-label="First name" data-required="1" placeholder="First"></div>
+    <div class="fld"><label>Legal middle name <span class="optn">or type none</span></label><input type="text" data-label="Middle name" placeholder="Middle"></div>
+    <div class="fld"><label>Legal last name <span class="req">req</span></label><input type="text" data-label="Last name" data-required="1" placeholder="Last"></div>
+  </div>
+  <div class="fld"><label>Date of birth <span class="req">req</span></label><input type="text" data-label="Date of birth" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Sex as shown on passport <span class="req">req</span></label><select data-label="Sex on passport" data-required="1"><option value="">Select</option><option>F</option><option>M</option><option>X</option></select></div>
+  <div class="fld"><label>Passport number <span class="req">req</span></label><input type="text" data-label="Passport number" data-required="1" placeholder="Passport #"></div>
+  <div class="fld"><label>Passport expiration date <span class="req">req</span></label><input type="text" data-label="Passport expires" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Is your passport valid through at least June 2027? <span class="req">req</span></label><select data-label="Passport valid past June 2027" data-required="1"><option value="">Select</option><option>Yes, valid</option><option>No, need to renew now</option><option>Not sure, will check this week</option></select></div>
+  <div class="fldrow">
+    <div class="fld"><label>Passport issuing country <span class="req">req</span></label><input type="text" data-label="Passport country" data-required="1" value="United States"></div>
+    <div class="fld"><label>Citizenship <span class="req">req</span></label><input type="text" data-label="Citizenship" data-required="1" value="United States"></div>
+  </div>
+  <div class="fld"><label>Mobile phone <span class="optn">for airline contact</span></label><input type="text" data-label="Mobile" placeholder="Phone"></div>
+  <div class="fld"><label>Email <span class="optn">for confirmations</span></label><input type="text" data-label="Email" placeholder="Email"></div>
+  <div class="fld"><label>Known Traveler Number <span class="optn">TSA PreCheck or Global Entry, optional</span></label><input type="text" data-label="Known Traveler Number" placeholder="KTN if you have one"></div>
+  <div class="fld"><label>United MileagePlus number <span class="optn">optional, to earn miles</span></label><input type="text" data-label="MileagePlus number" placeholder="Frequent flyer #"></div>
+  <div class="fld"><label>Redress number <span class="optn">optional, only if you have one</span></label><input type="text" data-label="Redress number" placeholder="Redress # if any"></div>
+  <div class="fld"><label>Seat preference</label><select data-label="Seat preference"><option value="">Select</option><option>Window</option><option>Aisle</option><option>No preference</option><option>Need extra room, see notes</option></select></div>
+  <div class="fld"><label>Food allergies or dietary needs <span class="optn">for flights and the group dinners</span></label><input type="text" data-label="Dietary / allergies" placeholder="none, vegetarian, nut allergy, etc."></div>
+  <div class="fld"><label>Anything else I should know <span class="optn">medical, mobility, anything</span></label><textarea data-label="Notes" rows="2" placeholder="Optional"></textarea></div>
+  <button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Avery's info</button>
+  <span class="copied">Copied. Now paste it in a text or email to Hunter.</span>
+</div></details>
+  <details class="person" data-name="Elliott Haley"><summary>Elliott Haley</summary><div class="inner">
+  <p class="reqnote">Fields marked <span class="req">req</span> are the must-haves to book your flight. The rest smooth things out or are for the group dinners. Two minutes, then hit copy.</p>
+  <div class="fldrow">
+    <div class="fld"><label>Legal first name <span class="req">req</span><br><span class="hint">exactly as printed on your passport</span></label><input type="text" data-label="First name" data-required="1" placeholder="First"></div>
+    <div class="fld"><label>Legal middle name <span class="optn">or type none</span></label><input type="text" data-label="Middle name" placeholder="Middle"></div>
+    <div class="fld"><label>Legal last name <span class="req">req</span></label><input type="text" data-label="Last name" data-required="1" placeholder="Last"></div>
+  </div>
+  <div class="fld"><label>Date of birth <span class="req">req</span></label><input type="text" data-label="Date of birth" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Sex as shown on passport <span class="req">req</span></label><select data-label="Sex on passport" data-required="1"><option value="">Select</option><option>F</option><option>M</option><option>X</option></select></div>
+  <div class="fld"><label>Passport number <span class="req">req</span></label><input type="text" data-label="Passport number" data-required="1" placeholder="Passport #"></div>
+  <div class="fld"><label>Passport expiration date <span class="req">req</span></label><input type="text" data-label="Passport expires" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Is your passport valid through at least June 2027? <span class="req">req</span></label><select data-label="Passport valid past June 2027" data-required="1"><option value="">Select</option><option>Yes, valid</option><option>No, need to renew now</option><option>Not sure, will check this week</option></select></div>
+  <div class="fldrow">
+    <div class="fld"><label>Passport issuing country <span class="req">req</span></label><input type="text" data-label="Passport country" data-required="1" value="United States"></div>
+    <div class="fld"><label>Citizenship <span class="req">req</span></label><input type="text" data-label="Citizenship" data-required="1" value="United States"></div>
+  </div>
+  <div class="fld"><label>Mobile phone <span class="optn">for airline contact</span></label><input type="text" data-label="Mobile" placeholder="Phone"></div>
+  <div class="fld"><label>Email <span class="optn">for confirmations</span></label><input type="text" data-label="Email" placeholder="Email"></div>
+  <div class="fld"><label>Known Traveler Number <span class="optn">TSA PreCheck or Global Entry, optional</span></label><input type="text" data-label="Known Traveler Number" placeholder="KTN if you have one"></div>
+  <div class="fld"><label>United MileagePlus number <span class="optn">optional, to earn miles</span></label><input type="text" data-label="MileagePlus number" placeholder="Frequent flyer #"></div>
+  <div class="fld"><label>Redress number <span class="optn">optional, only if you have one</span></label><input type="text" data-label="Redress number" placeholder="Redress # if any"></div>
+  <div class="fld"><label>Seat preference</label><select data-label="Seat preference"><option value="">Select</option><option>Window</option><option>Aisle</option><option>No preference</option><option>Need extra room, see notes</option></select></div>
+  <div class="fld"><label>Food allergies or dietary needs <span class="optn">for flights and the group dinners</span></label><input type="text" data-label="Dietary / allergies" placeholder="none, vegetarian, nut allergy, etc."></div>
+  <div class="fld"><label>Anything else I should know <span class="optn">medical, mobility, anything</span></label><textarea data-label="Notes" rows="2" placeholder="Optional"></textarea></div>
+  <button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Elliott's info</button>
+  <span class="copied">Copied. Now paste it in a text or email to Hunter.</span>
+</div></details>
+
+  <div class="sec"><span class="eyebrow">One per household</span><h2 class="slab">Shared details</h2></div>
+  <details class="person" data-name="Thomas family shared"><summary>Thomas family: shared details</summary><div class="inner"><p class="reqnote">One person per family fills this once. Covers billing and the emergency contact insurance requires.</p><div class="fld"><label>Home mailing address <span class="optn">for billing and insurance</span></label><textarea data-label="Home address" rows="2" placeholder="Street, city, state, ZIP"></textarea></div><div class="fld"><label>Emergency contact NOT on the trip <span class="req">req</span></label><input type="text" data-label="Emergency contact name" data-required="1" placeholder="Name"></div><div class="fld"><label>Emergency contact phone <span class="req">req</span></label><input type="text" data-label="Emergency contact phone" data-required="1" placeholder="Phone"></div><button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Thomas shared info</button><span class="copied">Copied. Now paste it in a text or email to Hunter.</span></div></details>
+  <details class="person" data-name="Haley family shared"><summary>Haley family: shared details</summary><div class="inner"><p class="reqnote">One person per family fills this once. Covers billing and the emergency contact insurance requires.</p><div class="fld"><label>Home mailing address <span class="optn">for billing and insurance</span></label><textarea data-label="Home address" rows="2" placeholder="Street, city, state, ZIP"></textarea></div><div class="fld"><label>Emergency contact NOT on the trip <span class="req">req</span></label><input type="text" data-label="Emergency contact name" data-required="1" placeholder="Name"></div><div class="fld"><label>Emergency contact phone <span class="req">req</span></label><input type="text" data-label="Emergency contact phone" data-required="1" placeholder="Phone"></div><button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Haley shared info</button><span class="copied">Copied. Now paste it in a text or email to Hunter.</span></div></details>
+
+</section>
+
+</div><!-- /wrap -->
+
+<footer class="foot">
+  <span class="slab">Eight of us. Ten days. Another world.</span>
+  Fares, hours, and event dates verified at booking. Every stop on this route sits between sea level and 2,600 feet.
+</footer>
+
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.tab[data-target]');
+  var panels = document.querySelectorAll('.panel');
+  function show(id){
+    for (var i=0;i<panels.length;i++){ panels[i].classList.toggle('active', panels[i].id===id); }
+    for (var j=0;j<tabs.length;j++){ tabs[j].classList.toggle('active', tabs[j].getAttribute('data-target')===id); }
+    if (window.location.hash !== '#'+id){
+      try { history.replaceState(null, '', '#'+id); } catch(e){}
+    }
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  for (var k=0;k<tabs.length;k++){
+    (function(b){
+      var id = b.getAttribute('data-target');
+      b.addEventListener('click', function(ev){ ev.preventDefault(); show(id); });
+    })(tabs[k]);
+  }
+  var h = (window.location.hash || '').replace('#','');
+  if (h && document.getElementById(h)){ show(h); }
+})();
+</script>
+<script>
+window.copyPerson = function(btn){
+  var card = btn.closest('.person');
+  var name = card.getAttribute('data-name') || 'Traveler';
+  var els = card.querySelectorAll('[data-label]');
+  var lines = ['Japan Trip info for ' + name, ''];
+  var missing = [];
+  for (var k=0; k<els.length; k++){
+    var el = els[k];
+    var label = el.getAttribute('data-label');
+    var val = (el.value || '').trim();
+    if (val){ lines.push(label + ': ' + val); }
+    else if (el.getAttribute('data-required') === '1'){ missing.push(label); }
+  }
+  if (missing.length){ lines.push('', 'Still needed: ' + missing.join(', ')); }
+  var text = lines.join('\n');
+  var badge = card.querySelector('.copied');
+  var done = function(){ if (badge){ badge.style.display='inline'; setTimeout(function(){ badge.style.display='none'; }, 4000); } };
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(function(){ fallbackCopy(text, done); });
+  } else { fallbackCopy(text, done); }
+};
+function fallbackCopy(text, cb){
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.style.position='fixed'; ta.style.top='-1000px'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try { document.execCommand('copy'); } catch(e){}
+  document.body.removeChild(ta); if (cb) cb();
+}
+</script>
+</body>
+</html>
