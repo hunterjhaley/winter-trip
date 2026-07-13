@@ -86,6 +86,19 @@ details[open] summary::after{content:"-"}
 .lane p{font-size:13.5px; color:var(--ink2); margin:0}
 .foot{background:var(--navy); color:#E9DFE0; text-align:center; padding:26px 16px; font-size:13.5px; margin-top:40px; border-top:6px solid var(--red)}
 .foot .slab{color:var(--gold); display:block; font-size:19px; margin-bottom:6px}
+.fldrow{display:flex; flex-wrap:wrap; gap:10px}
+.fldrow .fld{flex:1 1 140px}
+.fld{margin:9px 0}
+.fld label{display:block; font-size:12.5px; font-weight:700; color:var(--navy); margin-bottom:4px; line-height:1.3}
+.fld .hint{font-weight:600; color:var(--ink2); font-size:11px}
+.fld input, .fld select, .fld textarea{width:100%; padding:9px 11px; border:1.5px solid var(--line); border-radius:9px; font:inherit; font-size:14px; background:#FFFDF7; color:var(--ink)}
+.fld input:focus, .fld select:focus, .fld textarea:focus{outline:none; border-color:var(--ice-d)}
+.req{display:inline-block; font-size:10px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#fff; background:var(--red); border-radius:4px; padding:1px 6px; vertical-align:1px}
+.optn{font-size:11px; font-weight:600; color:var(--ice-d)}
+.person>summary{background:#FBF8EF; font-size:15px}
+.reqnote{font-size:12px; color:var(--ink2); margin:2px 0 10px}
+.copybtn{margin-top:10px; cursor:pointer}
+.copied{display:none; margin-left:10px; font-size:13px; font-weight:700; color:var(--pine)}
 </style>
 </head>
 <body>
@@ -109,6 +122,8 @@ details[open] summary::after{content:"-"}
   <button type="button" class="tab" data-target="p-stay"><span class="ico">&#127961;&#65039;</span><span class="step">Beds + tables</span>Stay &amp; Eat</button>
   <button type="button" class="tab" data-target="p-money"><span class="ico">&#128176;</span><span class="step">All in</span>The Money</button>
   <button type="button" class="tab" data-target="p-book"><span class="ico">&#128203;</span><span class="step">Do it in order</span>The Booking Playbook</button>
+  <button type="button" class="tab" data-target="p-there"><span class="ico">&#128737;&#65039;</span><span class="step">In your pocket</span>While We&#39;re There</button>
+  <button type="button" class="tab" data-target="p-info"><span class="ico">&#128101;</span><span class="step">For the planner</span>Family Info</button>
 </div></div>
 
 <div class="wrap">
@@ -431,12 +446,333 @@ details[open] summary::after{content:"-"}
     <details><summary>&#128225; Step 7: Phones, luggage, insurance</summary><div class="inner"><ul class="todo">
       <li><b>eSIMs, 2 weeks out</b><span>Airalo or Ubigi, a Japan data plan per adult phone, $10 to $15 each, installed before we fly and switched on at landing. Teens included so the group chat never dies.</span> <a href="https://www.airalo.com" target="_blank" rel="noopener">airalo.com</a></li>
       <li><b>Luggage forwarding, booked at the front desk</b><span>Nothing to arrange in advance: Wednesday morning, hand the big bags to the MIMARU Ueno front desk and say "takkyubin to MIMARU Kyoto Station for tomorrow." About $15 a bag, they handle everything, bags are waiting at Kyoto check-in.</span></li>
-      <li><b>Travel insurance, within 3 weeks of the first payment</b><span>A family policy covering trip cost, medical, and delays for 8 international travelers runs near the $700 in the budget; buying within 2 to 3 weeks of the first trip payment keeps the best coverage options open. Compare on a marketplace and pick a primary-medical plan.</span> <a href="https://www.insuremytrip.com" target="_blank" rel="noopener">insuremytrip.com</a></li>
+      <li><b>Travel insurance, within 3 weeks of the first payment</b><span>A family policy covering trip cost, medical, and delays for 8 international travelers runs near the $700 in the budget; buying within 2 to 3 weeks of the first trip payment keeps the best coverage options open. Compare on a marketplace and pick a primary-medical plan, and once bought, write the policy number onto the emergency card in While We&#39;re There. Bonus: the refundable-rate hotels and forward-cancelable tickets mean most of the budget stays recoverable until about 60 days out; flights are the main locked money.</span> <a href="https://www.insuremytrip.com" target="_blank" rel="noopener">insuremytrip.com</a></li>
+    </ul></div></details>
+
+
+    <details><summary>&#129520; Step 8: Packing &amp; prep (the two weeks before)</summary><div class="inner"><ul class="todo">
+      <li><b>Visit Japan Web, all 8 of us, two weeks out</b><span>Japan&#39;s official online pre-registration for immigration and customs. Hunter fills it once per traveler, everyone lands with a QR code, and the arrivals line becomes a scan instead of a form with jet-lagged littles.</span> <a href="https://www.vjw.digital.go.jp" target="_blank" rel="noopener">vjw.digital.go.jp</a></li>
+      <li><b>The meds audit</b><span>October task, full rules in While We&#39;re There: original bottles, a month or less, and the banned list checked. Daily-prescription folks flag Hunter by September.</span></li>
+      <li><b>Pack like it&#39;s a crisp Texas fall, not a ski trip</b><span>Layers for 40s to 60s, one real jacket each, hats and gloves for the Fuji night and dawn temple runs, and walking shoes broken in BEFORE the flight. This trip walks 12,000+ steps a day.</span></li>
+      <li><b>One big bag per person, one daypack each</b><span>Forwarding is priced per bag, and the Fuji night runs on daypacks only. Every daypack carries a trash bag (no public cans) and a water bottle.</span></li>
+      <li><b>Wheels for the 4 year old</b><span>A compact travel stroller that folds onto trains, or a carrier, is the difference between the Kyoto day finishing and it ending at 2pm. Disney rents strollers on site too.</span></li>
+      <li><b>Plugs: good news</b><span>Japan uses the same two-prong outlets as the US. Phone chargers work as-is; only three-prong laptop plugs need a cheap adapter.</span></li>
+      <li><b>The shared photo album</b><span>One iCloud or Google Photos shared album, all eight phones feeding it, created before wheels up. One link, every angle of the trip in one place.</span></li>
+      <li><b>The thank-you built in</b><span>This trip is a gift, so the gift goes back: the kids record one short thank-you clip at every stop (the toboggan-level moments: sumo, castle, deer), and in December the album becomes a printed photo book delivered to the grandmother who sent us. That&#39;s the plan, in writing, so it actually happens.</span></li>
+      <li><b>Souvenir envelopes</b><span>Each kid gets a set cash envelope for the trip; when it&#39;s gone it&#39;s gone. Ends every gift-shop negotiation before it starts, and Japan&#39;s gift shops are world-class ambushes.</span></li>
+      <li><b>Two booking notes so nobody learns the hard way</b><span>Ask the ryokan for the children&#39;s kaiseki option for the 4 and 6 year old (a twelve-course adult dinner versus a 4 year old is a known battle), and check Fantasy Springs ride height minimums for the littles the week Disney tickets are bought.</span></li>
+      <li><b>The home front</b><span>Both houses empty nine days over a holiday week: put names next to Maggie, the chickens, the mail, and Thanksgiving-week coverage at work before the calendar fills. Not glamorous, still the difference between relaxing over there and refreshing cameras.</span></li>
     </ul></div></details>
 
     <div class="note"><b>How to use this tab:</b> top to bottom, checking boxes. The only two phone calls in the whole plan are linking the flight reservations and, if you want a human, the sumo club. Everything else is a link on this page.</div>
     <div class="catch"><b>&#9888;&#65039; The one thing I can't be:</b> the 2am fixer if a flight cancels mid-trip. That job belongs to the travel insurance line and United's app rebooking, which is exactly why both are in this playbook. Everything up to that moment is on this page.</div>
   </div></div>
+
+</section>
+
+<section id="p-there" class="panel">
+
+  <div class="sec">
+    <span class="eyebrow">Everyone screenshots this tab</span>
+    <h2 class="slab">While We&#39;re There</h2>
+    <p class="lead">The in-country half of the playbook: emergencies, the medicine law nobody knows about, how not to stick out, and the ten phrases that carry the whole week. Add this page to your phone&#39;s home screen before we fly.</p>
+  </div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">&#128657; The emergency card (screenshot this one card)</h3>
+    <ul class="todo">
+      <li><b>Police: dial 110 &bull; Ambulance or fire: dial 119</b><span>English operators are available; say the city first (Tokyo or Kyoto), then the problem.</span></li>
+      <li><b>US Embassy Tokyo</b><span>1-10-5 Akasaka, Minato-ku, Tokyo. Phone +81 3-3224-5000. Lost passport, arrest, real trouble: this is the number.</span></li>
+      <li><b>Travel insurance policy number: ______________</b><span>Hunter writes it here the day the policy is bought, and everyone re-screenshots.</span></li>
+      <li><b>Show-the-driver hotel cards</b><span>Tokyo: MIMARU&#26481;&#20140; &#19978;&#37326; (Ueno). Kyoto: MIMARU&#20140;&#37117; STATION (across from Kyoto Station). Fuji: &#12358;&#12406;&#12420; Ubuya, Kawaguchiko. Showing the Japanese name to any taxi driver or shopkeeper gets you home; each family should also screenshot the hotel&#39;s Google Maps pin from the Stay tab.</span></li>
+      <li><b>If anyone gets separated</b><span>The rule for kids: STOP where you are, stand still, we come to you. Adults: go to the last together-point or the hotel lobby, whichever is closer, and post in the group chat. Nobody wanders looking for anybody.</span></li>
+      <li><b>The littles&#39; layer</b><span>AirTag in each kid&#39;s coat pocket, and a wristband or card in their pocket with a parent&#39;s phone number, worn every day, non-negotiable on Disney day.</span></li>
+    </ul>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">&#128138; The medicine law that catches Americans</h3>
+    <div class="catch"><b>&#9888;&#65039; Do the meds audit in October, not at the airport:</b> Japan bans some everyday US medications. Sudafed and anything with pseudoephedrine is illegal to bring in, period. ADHD stimulants like Adderall are prohibited without advance government permission (a Yakkan Shoumei certificate, applied for weeks ahead). Some codeine products are restricted.</div>
+    <ul class="todo">
+      <li><b>The safe pattern</b><span>Everything in original labeled bottles, no more than a month&#39;s supply, prescriptions photographed, and anything questionable checked against Japan&#39;s health ministry guidance in October. Tylenol, Advil, Benadryl, and kids&#39; fever meds are all fine.</span></li>
+      <li><b>If anyone in the crew takes a daily prescription</b><span>Flag it to Hunter by September so there&#39;s time to file for permission if it needs one. This is the single least-known trip-ruiner in Japan travel.</span></li>
+    </ul>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <details open><summary>&#127809; How not to stick out: the etiquette quicksheet</summary><div class="inner"><ul class="todo">
+      <li><b>Shoes off where the floor changes</b><span>Ryokan, temples, some restaurants: if there&#39;s a step up and slippers waiting, shoes come off. Wear socks you like.</span></li>
+      <li><b>Trains are library-quiet</b><span>Phones on silent, conversations low, no calls. The littles get the whisper game.</span></li>
+      <li><b>Nobody eats while walking</b><span>Buy the tanghulu, stand by the stall, finish it, then walk. It&#39;s the custom everywhere.</span></li>
+      <li><b>There are no public trash cans</b><span>Genuinely almost none. Every daypack carries a plastic bag; trash rides home to the apartment.</span></li>
+      <li><b>Escalators: stand left in Tokyo</b><span>(Kyoto and Osaka flip it; watch the locals.) Walkers pass on the other side.</span></li>
+      <li><b>Onsen rules at the ryokan</b><span>Wash and rinse completely at the seated showers BEFORE entering the bath, swimsuits are a no in traditional baths, hair up and towels stay out of the water. If anyone has visible tattoos, say so at booking: it&#39;s exactly why La Vista&#39;s private reservable baths are our alternate.</span></li>
+      <li><b>No tipping, anywhere, ever</b><span>Covered in the money tab, worth repeating: it can genuinely confuse or embarrass staff. A smile and arigatou gozaimasu is the tip.</span></li>
+    </ul></div></details>
+
+    <details><summary>&#128483;&#65039; Ten phrases that carry the week</summary><div class="inner"><ul class="todo">
+      <li><b>Konnichiwa</b><span>Hello.</span></li>
+      <li><b>Arigatou gozaimasu</b><span>Thank you (the polite full version; use it constantly).</span></li>
+      <li><b>Sumimasen</b><span>Excuse me / sorry / getting a waiter&#39;s attention. The most useful word in Japan.</span></li>
+      <li><b>Eigo o hanasemasu ka?</b><span>Do you speak English?</span></li>
+      <li><b>Kore o kudasai</b><span>This one, please (point at anything).</span></li>
+      <li><b>Ikura desu ka?</b><span>How much is it?</span></li>
+      <li><b>Toire wa doko desu ka?</b><span>Where is the bathroom?</span></li>
+      <li><b>Oishii!</b><span>Delicious! (Say it at the sumo hotpot and watch faces light up.)</span></li>
+      <li><b>Daijoubu</b><span>It&#39;s okay / I&#39;m fine / no thanks.</span></li>
+      <li><b>Kanpai!</b><span>Cheers. Thanksgiving dinner requires it.</span></li>
+    </ul><p style="font-size:13px;color:var(--ink2);margin-top:6px">Google Translate&#39;s camera mode reads menus and signs live; everyone installs it and downloads Japanese for offline before we fly.</p></div></details>
+
+    <details><summary>&#128241; Keep this guide working offline</summary><div class="inner"><ul class="todo">
+      <li><b>Add this page to your home screen</b><span>iPhone: share button, Add to Home Screen. It opens like an app and keeps working through spotty signal.</span></li>
+      <li><b>Screenshot the emergency card above</b><span>Photos work with zero signal. Every adult and both teens carry it.</span></li>
+      <li><b>Offline maps</b><span>In Google Maps, download offline areas for Tokyo, Kawaguchiko, and Kyoto before the flight.</span></li>
+    </ul></div></details>
+  </div></div>
+
+</section>
+
+<section id="p-info" class="panel">
+
+  <div class="sec">
+    <span class="eyebrow">For the trip planner</span>
+    <h2 class="slab">Family Info</h2>
+    <p class="lead">Hunter is booking everything, so he needs each traveler's details exactly as they appear on official documents. Find your name, tap it open, fill your fields, then tap the copy button and send it to Hunter in a text or email. Two minutes and you are done.</p>
+  </div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="slab">How this works, and one thing to know</h3>
+    <ul class="todo">
+      <li><b>Fill your own card, then copy and send</b><span>Open your name below, type your info, tap "Copy my info," and paste it into a text or email straight to Hunter. That is the only way your details leave your phone.</span></li>
+      <li><b>&#128274; Nothing is saved or posted here</b><span>This page does not store or send anything on its own; your info exists only on your screen until you copy it and send it privately to Hunter. So send it by text or email, never by posting it anywhere public.</span></li>
+      <li><b>&#128683; No Social Security numbers, on purpose</b><span>Booking flights and hotels never requires an SSN. The only sensitive number needed is your passport number, sent privately to Hunter. Anyone asking for an SSN to book a normal flight is a red flag, which is why there is no SSN field here.</span></li>
+      <li><b>&#9888;&#65039; Check your passport TODAY</b><span>It must be valid through at least June 2027 (six months past our travel). If it expires before then, you have to renew now, so mark "need to renew" and tell Hunter. This is the tightest deadline of the whole trip.</span></li>
+    </ul>
+  </div></div>
+
+  <div class="sec"><span class="eyebrow">Family one</span><h2 class="slab">The Thomas family</h2></div>
+  <details class="person" data-name="Hannah Thomas"><summary>Hannah Thomas</summary><div class="inner">
+  <p class="reqnote">Fields marked <span class="req">req</span> are the must-haves to book your flight. The rest smooth things out or are for the group dinners. Two minutes, then hit copy.</p>
+  <div class="fldrow">
+    <div class="fld"><label>Legal first name <span class="req">req</span><br><span class="hint">exactly as printed on your passport</span></label><input type="text" data-label="First name" data-required="1" placeholder="First"></div>
+    <div class="fld"><label>Legal middle name <span class="optn">or type none</span></label><input type="text" data-label="Middle name" placeholder="Middle"></div>
+    <div class="fld"><label>Legal last name <span class="req">req</span></label><input type="text" data-label="Last name" data-required="1" placeholder="Last"></div>
+  </div>
+  <div class="fld"><label>Date of birth <span class="req">req</span></label><input type="text" data-label="Date of birth" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Sex as shown on passport <span class="req">req</span></label><select data-label="Sex on passport" data-required="1"><option value="">Select</option><option>F</option><option>M</option><option>X</option></select></div>
+  <div class="fld"><label>Passport number <span class="req">req</span></label><input type="text" data-label="Passport number" data-required="1" placeholder="Passport #"></div>
+  <div class="fld"><label>Passport expiration date <span class="req">req</span></label><input type="text" data-label="Passport expires" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Is your passport valid through at least June 2027? <span class="req">req</span></label><select data-label="Passport valid past June 2027" data-required="1"><option value="">Select</option><option>Yes, valid</option><option>No, need to renew now</option><option>Not sure, will check this week</option></select></div>
+  <div class="fldrow">
+    <div class="fld"><label>Passport issuing country <span class="req">req</span></label><input type="text" data-label="Passport country" data-required="1" value="United States"></div>
+    <div class="fld"><label>Citizenship <span class="req">req</span></label><input type="text" data-label="Citizenship" data-required="1" value="United States"></div>
+  </div>
+  <div class="fld"><label>Mobile phone <span class="optn">for airline contact</span></label><input type="text" data-label="Mobile" placeholder="Phone"></div>
+  <div class="fld"><label>Email <span class="optn">for confirmations</span></label><input type="text" data-label="Email" placeholder="Email"></div>
+  <div class="fld"><label>Known Traveler Number <span class="optn">TSA PreCheck or Global Entry, optional</span></label><input type="text" data-label="Known Traveler Number" placeholder="KTN if you have one"></div>
+  <div class="fld"><label>United MileagePlus number <span class="optn">optional, to earn miles</span></label><input type="text" data-label="MileagePlus number" placeholder="Frequent flyer #"></div>
+  <div class="fld"><label>Redress number <span class="optn">optional, only if you have one</span></label><input type="text" data-label="Redress number" placeholder="Redress # if any"></div>
+  <div class="fld"><label>Seat preference</label><select data-label="Seat preference"><option value="">Select</option><option>Window</option><option>Aisle</option><option>No preference</option><option>Need extra room, see notes</option></select></div>
+  <div class="fld"><label>Food allergies or dietary needs <span class="optn">for flights and the group dinners</span></label><input type="text" data-label="Dietary / allergies" placeholder="none, vegetarian, nut allergy, etc."></div>
+  <div class="fld"><label>Anything else I should know <span class="optn">medical, mobility, anything</span></label><textarea data-label="Notes" rows="2" placeholder="Optional"></textarea></div>
+  <button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Hannah's info</button>
+  <span class="copied">Copied. Now paste it in a text or email to Hunter.</span>
+</div></details>
+  <details class="person" data-name="Stacey Thomas"><summary>Stacey Thomas</summary><div class="inner">
+  <p class="reqnote">Fields marked <span class="req">req</span> are the must-haves to book your flight. The rest smooth things out or are for the group dinners. Two minutes, then hit copy.</p>
+  <div class="fldrow">
+    <div class="fld"><label>Legal first name <span class="req">req</span><br><span class="hint">exactly as printed on your passport</span></label><input type="text" data-label="First name" data-required="1" placeholder="First"></div>
+    <div class="fld"><label>Legal middle name <span class="optn">or type none</span></label><input type="text" data-label="Middle name" placeholder="Middle"></div>
+    <div class="fld"><label>Legal last name <span class="req">req</span></label><input type="text" data-label="Last name" data-required="1" placeholder="Last"></div>
+  </div>
+  <div class="fld"><label>Date of birth <span class="req">req</span></label><input type="text" data-label="Date of birth" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Sex as shown on passport <span class="req">req</span></label><select data-label="Sex on passport" data-required="1"><option value="">Select</option><option>F</option><option>M</option><option>X</option></select></div>
+  <div class="fld"><label>Passport number <span class="req">req</span></label><input type="text" data-label="Passport number" data-required="1" placeholder="Passport #"></div>
+  <div class="fld"><label>Passport expiration date <span class="req">req</span></label><input type="text" data-label="Passport expires" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Is your passport valid through at least June 2027? <span class="req">req</span></label><select data-label="Passport valid past June 2027" data-required="1"><option value="">Select</option><option>Yes, valid</option><option>No, need to renew now</option><option>Not sure, will check this week</option></select></div>
+  <div class="fldrow">
+    <div class="fld"><label>Passport issuing country <span class="req">req</span></label><input type="text" data-label="Passport country" data-required="1" value="United States"></div>
+    <div class="fld"><label>Citizenship <span class="req">req</span></label><input type="text" data-label="Citizenship" data-required="1" value="United States"></div>
+  </div>
+  <div class="fld"><label>Mobile phone <span class="optn">for airline contact</span></label><input type="text" data-label="Mobile" placeholder="Phone"></div>
+  <div class="fld"><label>Email <span class="optn">for confirmations</span></label><input type="text" data-label="Email" placeholder="Email"></div>
+  <div class="fld"><label>Known Traveler Number <span class="optn">TSA PreCheck or Global Entry, optional</span></label><input type="text" data-label="Known Traveler Number" placeholder="KTN if you have one"></div>
+  <div class="fld"><label>United MileagePlus number <span class="optn">optional, to earn miles</span></label><input type="text" data-label="MileagePlus number" placeholder="Frequent flyer #"></div>
+  <div class="fld"><label>Redress number <span class="optn">optional, only if you have one</span></label><input type="text" data-label="Redress number" placeholder="Redress # if any"></div>
+  <div class="fld"><label>Seat preference</label><select data-label="Seat preference"><option value="">Select</option><option>Window</option><option>Aisle</option><option>No preference</option><option>Need extra room, see notes</option></select></div>
+  <div class="fld"><label>Food allergies or dietary needs <span class="optn">for flights and the group dinners</span></label><input type="text" data-label="Dietary / allergies" placeholder="none, vegetarian, nut allergy, etc."></div>
+  <div class="fld"><label>Anything else I should know <span class="optn">medical, mobility, anything</span></label><textarea data-label="Notes" rows="2" placeholder="Optional"></textarea></div>
+  <button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Stacey's info</button>
+  <span class="copied">Copied. Now paste it in a text or email to Hunter.</span>
+</div></details>
+  <details class="person" data-name="Ty Thomas"><summary>Ty Thomas</summary><div class="inner">
+  <p class="reqnote">Fields marked <span class="req">req</span> are the must-haves to book your flight. The rest smooth things out or are for the group dinners. Two minutes, then hit copy.</p>
+  <div class="fldrow">
+    <div class="fld"><label>Legal first name <span class="req">req</span><br><span class="hint">exactly as printed on your passport</span></label><input type="text" data-label="First name" data-required="1" placeholder="First"></div>
+    <div class="fld"><label>Legal middle name <span class="optn">or type none</span></label><input type="text" data-label="Middle name" placeholder="Middle"></div>
+    <div class="fld"><label>Legal last name <span class="req">req</span></label><input type="text" data-label="Last name" data-required="1" placeholder="Last"></div>
+  </div>
+  <div class="fld"><label>Date of birth <span class="req">req</span></label><input type="text" data-label="Date of birth" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Sex as shown on passport <span class="req">req</span></label><select data-label="Sex on passport" data-required="1"><option value="">Select</option><option>F</option><option>M</option><option>X</option></select></div>
+  <div class="fld"><label>Passport number <span class="req">req</span></label><input type="text" data-label="Passport number" data-required="1" placeholder="Passport #"></div>
+  <div class="fld"><label>Passport expiration date <span class="req">req</span></label><input type="text" data-label="Passport expires" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Is your passport valid through at least June 2027? <span class="req">req</span></label><select data-label="Passport valid past June 2027" data-required="1"><option value="">Select</option><option>Yes, valid</option><option>No, need to renew now</option><option>Not sure, will check this week</option></select></div>
+  <div class="fldrow">
+    <div class="fld"><label>Passport issuing country <span class="req">req</span></label><input type="text" data-label="Passport country" data-required="1" value="United States"></div>
+    <div class="fld"><label>Citizenship <span class="req">req</span></label><input type="text" data-label="Citizenship" data-required="1" value="United States"></div>
+  </div>
+  <div class="fld"><label>Mobile phone <span class="optn">for airline contact</span></label><input type="text" data-label="Mobile" placeholder="Phone"></div>
+  <div class="fld"><label>Email <span class="optn">for confirmations</span></label><input type="text" data-label="Email" placeholder="Email"></div>
+  <div class="fld"><label>Known Traveler Number <span class="optn">TSA PreCheck or Global Entry, optional</span></label><input type="text" data-label="Known Traveler Number" placeholder="KTN if you have one"></div>
+  <div class="fld"><label>United MileagePlus number <span class="optn">optional, to earn miles</span></label><input type="text" data-label="MileagePlus number" placeholder="Frequent flyer #"></div>
+  <div class="fld"><label>Redress number <span class="optn">optional, only if you have one</span></label><input type="text" data-label="Redress number" placeholder="Redress # if any"></div>
+  <div class="fld"><label>Seat preference</label><select data-label="Seat preference"><option value="">Select</option><option>Window</option><option>Aisle</option><option>No preference</option><option>Need extra room, see notes</option></select></div>
+  <div class="fld"><label>Food allergies or dietary needs <span class="optn">for flights and the group dinners</span></label><input type="text" data-label="Dietary / allergies" placeholder="none, vegetarian, nut allergy, etc."></div>
+  <div class="fld"><label>Anything else I should know <span class="optn">medical, mobility, anything</span></label><textarea data-label="Notes" rows="2" placeholder="Optional"></textarea></div>
+  <button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Ty's info</button>
+  <span class="copied">Copied. Now paste it in a text or email to Hunter.</span>
+</div></details>
+  <details class="person" data-name="Tenley Thomas"><summary>Tenley Thomas</summary><div class="inner">
+  <p class="reqnote">Fields marked <span class="req">req</span> are the must-haves to book your flight. The rest smooth things out or are for the group dinners. Two minutes, then hit copy.</p>
+  <div class="fldrow">
+    <div class="fld"><label>Legal first name <span class="req">req</span><br><span class="hint">exactly as printed on your passport</span></label><input type="text" data-label="First name" data-required="1" placeholder="First"></div>
+    <div class="fld"><label>Legal middle name <span class="optn">or type none</span></label><input type="text" data-label="Middle name" placeholder="Middle"></div>
+    <div class="fld"><label>Legal last name <span class="req">req</span></label><input type="text" data-label="Last name" data-required="1" placeholder="Last"></div>
+  </div>
+  <div class="fld"><label>Date of birth <span class="req">req</span></label><input type="text" data-label="Date of birth" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Sex as shown on passport <span class="req">req</span></label><select data-label="Sex on passport" data-required="1"><option value="">Select</option><option>F</option><option>M</option><option>X</option></select></div>
+  <div class="fld"><label>Passport number <span class="req">req</span></label><input type="text" data-label="Passport number" data-required="1" placeholder="Passport #"></div>
+  <div class="fld"><label>Passport expiration date <span class="req">req</span></label><input type="text" data-label="Passport expires" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Is your passport valid through at least June 2027? <span class="req">req</span></label><select data-label="Passport valid past June 2027" data-required="1"><option value="">Select</option><option>Yes, valid</option><option>No, need to renew now</option><option>Not sure, will check this week</option></select></div>
+  <div class="fldrow">
+    <div class="fld"><label>Passport issuing country <span class="req">req</span></label><input type="text" data-label="Passport country" data-required="1" value="United States"></div>
+    <div class="fld"><label>Citizenship <span class="req">req</span></label><input type="text" data-label="Citizenship" data-required="1" value="United States"></div>
+  </div>
+  <div class="fld"><label>Mobile phone <span class="optn">for airline contact</span></label><input type="text" data-label="Mobile" placeholder="Phone"></div>
+  <div class="fld"><label>Email <span class="optn">for confirmations</span></label><input type="text" data-label="Email" placeholder="Email"></div>
+  <div class="fld"><label>Known Traveler Number <span class="optn">TSA PreCheck or Global Entry, optional</span></label><input type="text" data-label="Known Traveler Number" placeholder="KTN if you have one"></div>
+  <div class="fld"><label>United MileagePlus number <span class="optn">optional, to earn miles</span></label><input type="text" data-label="MileagePlus number" placeholder="Frequent flyer #"></div>
+  <div class="fld"><label>Redress number <span class="optn">optional, only if you have one</span></label><input type="text" data-label="Redress number" placeholder="Redress # if any"></div>
+  <div class="fld"><label>Seat preference</label><select data-label="Seat preference"><option value="">Select</option><option>Window</option><option>Aisle</option><option>No preference</option><option>Need extra room, see notes</option></select></div>
+  <div class="fld"><label>Food allergies or dietary needs <span class="optn">for flights and the group dinners</span></label><input type="text" data-label="Dietary / allergies" placeholder="none, vegetarian, nut allergy, etc."></div>
+  <div class="fld"><label>Anything else I should know <span class="optn">medical, mobility, anything</span></label><textarea data-label="Notes" rows="2" placeholder="Optional"></textarea></div>
+  <button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Tenley's info</button>
+  <span class="copied">Copied. Now paste it in a text or email to Hunter.</span>
+</div></details>
+
+  <div class="sec"><span class="eyebrow">Family two</span><h2 class="slab">The Haley family</h2></div>
+  <details class="person" data-name="Brittany Haley"><summary>Brittany Haley</summary><div class="inner">
+  <p class="reqnote">Fields marked <span class="req">req</span> are the must-haves to book your flight. The rest smooth things out or are for the group dinners. Two minutes, then hit copy.</p>
+  <div class="fldrow">
+    <div class="fld"><label>Legal first name <span class="req">req</span><br><span class="hint">exactly as printed on your passport</span></label><input type="text" data-label="First name" data-required="1" placeholder="First"></div>
+    <div class="fld"><label>Legal middle name <span class="optn">or type none</span></label><input type="text" data-label="Middle name" placeholder="Middle"></div>
+    <div class="fld"><label>Legal last name <span class="req">req</span></label><input type="text" data-label="Last name" data-required="1" placeholder="Last"></div>
+  </div>
+  <div class="fld"><label>Date of birth <span class="req">req</span></label><input type="text" data-label="Date of birth" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Sex as shown on passport <span class="req">req</span></label><select data-label="Sex on passport" data-required="1"><option value="">Select</option><option>F</option><option>M</option><option>X</option></select></div>
+  <div class="fld"><label>Passport number <span class="req">req</span></label><input type="text" data-label="Passport number" data-required="1" placeholder="Passport #"></div>
+  <div class="fld"><label>Passport expiration date <span class="req">req</span></label><input type="text" data-label="Passport expires" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Is your passport valid through at least June 2027? <span class="req">req</span></label><select data-label="Passport valid past June 2027" data-required="1"><option value="">Select</option><option>Yes, valid</option><option>No, need to renew now</option><option>Not sure, will check this week</option></select></div>
+  <div class="fldrow">
+    <div class="fld"><label>Passport issuing country <span class="req">req</span></label><input type="text" data-label="Passport country" data-required="1" value="United States"></div>
+    <div class="fld"><label>Citizenship <span class="req">req</span></label><input type="text" data-label="Citizenship" data-required="1" value="United States"></div>
+  </div>
+  <div class="fld"><label>Mobile phone <span class="optn">for airline contact</span></label><input type="text" data-label="Mobile" placeholder="Phone"></div>
+  <div class="fld"><label>Email <span class="optn">for confirmations</span></label><input type="text" data-label="Email" placeholder="Email"></div>
+  <div class="fld"><label>Known Traveler Number <span class="optn">TSA PreCheck or Global Entry, optional</span></label><input type="text" data-label="Known Traveler Number" placeholder="KTN if you have one"></div>
+  <div class="fld"><label>United MileagePlus number <span class="optn">optional, to earn miles</span></label><input type="text" data-label="MileagePlus number" placeholder="Frequent flyer #"></div>
+  <div class="fld"><label>Redress number <span class="optn">optional, only if you have one</span></label><input type="text" data-label="Redress number" placeholder="Redress # if any"></div>
+  <div class="fld"><label>Seat preference</label><select data-label="Seat preference"><option value="">Select</option><option>Window</option><option>Aisle</option><option>No preference</option><option>Need extra room, see notes</option></select></div>
+  <div class="fld"><label>Food allergies or dietary needs <span class="optn">for flights and the group dinners</span></label><input type="text" data-label="Dietary / allergies" placeholder="none, vegetarian, nut allergy, etc."></div>
+  <div class="fld"><label>Anything else I should know <span class="optn">medical, mobility, anything</span></label><textarea data-label="Notes" rows="2" placeholder="Optional"></textarea></div>
+  <button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Brittany's info</button>
+  <span class="copied">Copied. Now paste it in a text or email to Hunter.</span>
+</div></details>
+  <details class="person" data-name="Hunter Haley"><summary>Hunter Haley</summary><div class="inner">
+  <p class="reqnote">Fields marked <span class="req">req</span> are the must-haves to book your flight. The rest smooth things out or are for the group dinners. Two minutes, then hit copy.</p>
+  <div class="fldrow">
+    <div class="fld"><label>Legal first name <span class="req">req</span><br><span class="hint">exactly as printed on your passport</span></label><input type="text" data-label="First name" data-required="1" placeholder="First"></div>
+    <div class="fld"><label>Legal middle name <span class="optn">or type none</span></label><input type="text" data-label="Middle name" placeholder="Middle"></div>
+    <div class="fld"><label>Legal last name <span class="req">req</span></label><input type="text" data-label="Last name" data-required="1" placeholder="Last"></div>
+  </div>
+  <div class="fld"><label>Date of birth <span class="req">req</span></label><input type="text" data-label="Date of birth" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Sex as shown on passport <span class="req">req</span></label><select data-label="Sex on passport" data-required="1"><option value="">Select</option><option>F</option><option>M</option><option>X</option></select></div>
+  <div class="fld"><label>Passport number <span class="req">req</span></label><input type="text" data-label="Passport number" data-required="1" placeholder="Passport #"></div>
+  <div class="fld"><label>Passport expiration date <span class="req">req</span></label><input type="text" data-label="Passport expires" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Is your passport valid through at least June 2027? <span class="req">req</span></label><select data-label="Passport valid past June 2027" data-required="1"><option value="">Select</option><option>Yes, valid</option><option>No, need to renew now</option><option>Not sure, will check this week</option></select></div>
+  <div class="fldrow">
+    <div class="fld"><label>Passport issuing country <span class="req">req</span></label><input type="text" data-label="Passport country" data-required="1" value="United States"></div>
+    <div class="fld"><label>Citizenship <span class="req">req</span></label><input type="text" data-label="Citizenship" data-required="1" value="United States"></div>
+  </div>
+  <div class="fld"><label>Mobile phone <span class="optn">for airline contact</span></label><input type="text" data-label="Mobile" placeholder="Phone"></div>
+  <div class="fld"><label>Email <span class="optn">for confirmations</span></label><input type="text" data-label="Email" placeholder="Email"></div>
+  <div class="fld"><label>Known Traveler Number <span class="optn">TSA PreCheck or Global Entry, optional</span></label><input type="text" data-label="Known Traveler Number" placeholder="KTN if you have one"></div>
+  <div class="fld"><label>United MileagePlus number <span class="optn">optional, to earn miles</span></label><input type="text" data-label="MileagePlus number" placeholder="Frequent flyer #"></div>
+  <div class="fld"><label>Redress number <span class="optn">optional, only if you have one</span></label><input type="text" data-label="Redress number" placeholder="Redress # if any"></div>
+  <div class="fld"><label>Seat preference</label><select data-label="Seat preference"><option value="">Select</option><option>Window</option><option>Aisle</option><option>No preference</option><option>Need extra room, see notes</option></select></div>
+  <div class="fld"><label>Food allergies or dietary needs <span class="optn">for flights and the group dinners</span></label><input type="text" data-label="Dietary / allergies" placeholder="none, vegetarian, nut allergy, etc."></div>
+  <div class="fld"><label>Anything else I should know <span class="optn">medical, mobility, anything</span></label><textarea data-label="Notes" rows="2" placeholder="Optional"></textarea></div>
+  <button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Hunter's info</button>
+  <span class="copied">Copied. Now paste it in a text or email to Hunter.</span>
+</div></details>
+  <details class="person" data-name="Avery Haley"><summary>Avery Haley</summary><div class="inner">
+  <p class="reqnote">Fields marked <span class="req">req</span> are the must-haves to book your flight. The rest smooth things out or are for the group dinners. Two minutes, then hit copy.</p>
+  <div class="fldrow">
+    <div class="fld"><label>Legal first name <span class="req">req</span><br><span class="hint">exactly as printed on your passport</span></label><input type="text" data-label="First name" data-required="1" placeholder="First"></div>
+    <div class="fld"><label>Legal middle name <span class="optn">or type none</span></label><input type="text" data-label="Middle name" placeholder="Middle"></div>
+    <div class="fld"><label>Legal last name <span class="req">req</span></label><input type="text" data-label="Last name" data-required="1" placeholder="Last"></div>
+  </div>
+  <div class="fld"><label>Date of birth <span class="req">req</span></label><input type="text" data-label="Date of birth" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Sex as shown on passport <span class="req">req</span></label><select data-label="Sex on passport" data-required="1"><option value="">Select</option><option>F</option><option>M</option><option>X</option></select></div>
+  <div class="fld"><label>Passport number <span class="req">req</span></label><input type="text" data-label="Passport number" data-required="1" placeholder="Passport #"></div>
+  <div class="fld"><label>Passport expiration date <span class="req">req</span></label><input type="text" data-label="Passport expires" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Is your passport valid through at least June 2027? <span class="req">req</span></label><select data-label="Passport valid past June 2027" data-required="1"><option value="">Select</option><option>Yes, valid</option><option>No, need to renew now</option><option>Not sure, will check this week</option></select></div>
+  <div class="fldrow">
+    <div class="fld"><label>Passport issuing country <span class="req">req</span></label><input type="text" data-label="Passport country" data-required="1" value="United States"></div>
+    <div class="fld"><label>Citizenship <span class="req">req</span></label><input type="text" data-label="Citizenship" data-required="1" value="United States"></div>
+  </div>
+  <div class="fld"><label>Mobile phone <span class="optn">for airline contact</span></label><input type="text" data-label="Mobile" placeholder="Phone"></div>
+  <div class="fld"><label>Email <span class="optn">for confirmations</span></label><input type="text" data-label="Email" placeholder="Email"></div>
+  <div class="fld"><label>Known Traveler Number <span class="optn">TSA PreCheck or Global Entry, optional</span></label><input type="text" data-label="Known Traveler Number" placeholder="KTN if you have one"></div>
+  <div class="fld"><label>United MileagePlus number <span class="optn">optional, to earn miles</span></label><input type="text" data-label="MileagePlus number" placeholder="Frequent flyer #"></div>
+  <div class="fld"><label>Redress number <span class="optn">optional, only if you have one</span></label><input type="text" data-label="Redress number" placeholder="Redress # if any"></div>
+  <div class="fld"><label>Seat preference</label><select data-label="Seat preference"><option value="">Select</option><option>Window</option><option>Aisle</option><option>No preference</option><option>Need extra room, see notes</option></select></div>
+  <div class="fld"><label>Food allergies or dietary needs <span class="optn">for flights and the group dinners</span></label><input type="text" data-label="Dietary / allergies" placeholder="none, vegetarian, nut allergy, etc."></div>
+  <div class="fld"><label>Anything else I should know <span class="optn">medical, mobility, anything</span></label><textarea data-label="Notes" rows="2" placeholder="Optional"></textarea></div>
+  <button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Avery's info</button>
+  <span class="copied">Copied. Now paste it in a text or email to Hunter.</span>
+</div></details>
+  <details class="person" data-name="Elliott Haley"><summary>Elliott Haley</summary><div class="inner">
+  <p class="reqnote">Fields marked <span class="req">req</span> are the must-haves to book your flight. The rest smooth things out or are for the group dinners. Two minutes, then hit copy.</p>
+  <div class="fldrow">
+    <div class="fld"><label>Legal first name <span class="req">req</span><br><span class="hint">exactly as printed on your passport</span></label><input type="text" data-label="First name" data-required="1" placeholder="First"></div>
+    <div class="fld"><label>Legal middle name <span class="optn">or type none</span></label><input type="text" data-label="Middle name" placeholder="Middle"></div>
+    <div class="fld"><label>Legal last name <span class="req">req</span></label><input type="text" data-label="Last name" data-required="1" placeholder="Last"></div>
+  </div>
+  <div class="fld"><label>Date of birth <span class="req">req</span></label><input type="text" data-label="Date of birth" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Sex as shown on passport <span class="req">req</span></label><select data-label="Sex on passport" data-required="1"><option value="">Select</option><option>F</option><option>M</option><option>X</option></select></div>
+  <div class="fld"><label>Passport number <span class="req">req</span></label><input type="text" data-label="Passport number" data-required="1" placeholder="Passport #"></div>
+  <div class="fld"><label>Passport expiration date <span class="req">req</span></label><input type="text" data-label="Passport expires" data-required="1" placeholder="MM/DD/YYYY"></div>
+  <div class="fld"><label>Is your passport valid through at least June 2027? <span class="req">req</span></label><select data-label="Passport valid past June 2027" data-required="1"><option value="">Select</option><option>Yes, valid</option><option>No, need to renew now</option><option>Not sure, will check this week</option></select></div>
+  <div class="fldrow">
+    <div class="fld"><label>Passport issuing country <span class="req">req</span></label><input type="text" data-label="Passport country" data-required="1" value="United States"></div>
+    <div class="fld"><label>Citizenship <span class="req">req</span></label><input type="text" data-label="Citizenship" data-required="1" value="United States"></div>
+  </div>
+  <div class="fld"><label>Mobile phone <span class="optn">for airline contact</span></label><input type="text" data-label="Mobile" placeholder="Phone"></div>
+  <div class="fld"><label>Email <span class="optn">for confirmations</span></label><input type="text" data-label="Email" placeholder="Email"></div>
+  <div class="fld"><label>Known Traveler Number <span class="optn">TSA PreCheck or Global Entry, optional</span></label><input type="text" data-label="Known Traveler Number" placeholder="KTN if you have one"></div>
+  <div class="fld"><label>United MileagePlus number <span class="optn">optional, to earn miles</span></label><input type="text" data-label="MileagePlus number" placeholder="Frequent flyer #"></div>
+  <div class="fld"><label>Redress number <span class="optn">optional, only if you have one</span></label><input type="text" data-label="Redress number" placeholder="Redress # if any"></div>
+  <div class="fld"><label>Seat preference</label><select data-label="Seat preference"><option value="">Select</option><option>Window</option><option>Aisle</option><option>No preference</option><option>Need extra room, see notes</option></select></div>
+  <div class="fld"><label>Food allergies or dietary needs <span class="optn">for flights and the group dinners</span></label><input type="text" data-label="Dietary / allergies" placeholder="none, vegetarian, nut allergy, etc."></div>
+  <div class="fld"><label>Anything else I should know <span class="optn">medical, mobility, anything</span></label><textarea data-label="Notes" rows="2" placeholder="Optional"></textarea></div>
+  <button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Elliott's info</button>
+  <span class="copied">Copied. Now paste it in a text or email to Hunter.</span>
+</div></details>
+
+  <div class="sec"><span class="eyebrow">One per household</span><h2 class="slab">Shared details</h2></div>
+  <details class="person" data-name="Thomas family shared"><summary>Thomas family: shared details</summary><div class="inner"><p class="reqnote">One person per family fills this once. Covers billing and the emergency contact insurance requires.</p><div class="fld"><label>Home mailing address <span class="optn">for billing and insurance</span></label><textarea data-label="Home address" rows="2" placeholder="Street, city, state, ZIP"></textarea></div><div class="fld"><label>Emergency contact NOT on the trip <span class="req">req</span></label><input type="text" data-label="Emergency contact name" data-required="1" placeholder="Name"></div><div class="fld"><label>Emergency contact phone <span class="req">req</span></label><input type="text" data-label="Emergency contact phone" data-required="1" placeholder="Phone"></div><button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Thomas shared info</button><span class="copied">Copied. Now paste it in a text or email to Hunter.</span></div></details>
+  <details class="person" data-name="Haley family shared"><summary>Haley family: shared details</summary><div class="inner"><p class="reqnote">One person per family fills this once. Covers billing and the emergency contact insurance requires.</p><div class="fld"><label>Home mailing address <span class="optn">for billing and insurance</span></label><textarea data-label="Home address" rows="2" placeholder="Street, city, state, ZIP"></textarea></div><div class="fld"><label>Emergency contact NOT on the trip <span class="req">req</span></label><input type="text" data-label="Emergency contact name" data-required="1" placeholder="Name"></div><div class="fld"><label>Emergency contact phone <span class="req">req</span></label><input type="text" data-label="Emergency contact phone" data-required="1" placeholder="Phone"></div><button type="button" class="btn gold copybtn" onclick="copyPerson(this)">Copy Haley shared info</button><span class="copied">Copied. Now paste it in a text or email to Hunter.</span></div></details>
 
 </section>
 
@@ -468,6 +804,36 @@ details[open] summary::after{content:"-"}
   var h = (window.location.hash || '').replace('#','');
   if (h && document.getElementById(h)){ show(h); }
 })();
+</script>
+<script>
+window.copyPerson = function(btn){
+  var card = btn.closest('.person');
+  var name = card.getAttribute('data-name') || 'Traveler';
+  var els = card.querySelectorAll('[data-label]');
+  var lines = ['Japan Trip info for ' + name, ''];
+  var missing = [];
+  for (var k=0; k<els.length; k++){
+    var el = els[k];
+    var label = el.getAttribute('data-label');
+    var val = (el.value || '').trim();
+    if (val){ lines.push(label + ': ' + val); }
+    else if (el.getAttribute('data-required') === '1'){ missing.push(label); }
+  }
+  if (missing.length){ lines.push('', 'Still needed: ' + missing.join(', ')); }
+  var text = lines.join('\n');
+  var badge = card.querySelector('.copied');
+  var done = function(){ if (badge){ badge.style.display='inline'; setTimeout(function(){ badge.style.display='none'; }, 4000); } };
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(function(){ fallbackCopy(text, done); });
+  } else { fallbackCopy(text, done); }
+};
+function fallbackCopy(text, cb){
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.style.position='fixed'; ta.style.top='-1000px'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try { document.execCommand('copy'); } catch(e){}
+  document.body.removeChild(ta); if (cb) cb();
+}
 </script>
 </body>
 </html>
